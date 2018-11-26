@@ -1,0 +1,265 @@
+﻿<!--<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <meta charset="utf-8" />
+</head>
+<body>
+
+</body>
+</html>-->
+
+@{
+    Layout = "~/Areas/bcms-Root/Views/Shared/BaseLayout.cshtml";
+}
+@section Styles {
+    @RenderSection("Styles", false)
+
+}
+
+<link href="/file/bcms-installation/Content/Styles/css/bootstrap.css" rel="stylesheet" />
+<link href="/file/bcms-installation/Content/Styles/css/colors.css" rel="stylesheet" />
+<link href="/file/bcms-installation/Content/Styles/css/style.css" rel="stylesheet" />
+<link href="/file/bcms-installation/Content/Styles/css/jetmenu.css" rel="stylesheet" />
+<link href="/file/bcms-installation/Content/Styles/cssStyles.css" rel="stylesheet" />
+<link href="/file/bcms-installation/Content/Styles/css/flexslider.css" rel="stylesheet" />
+<link href="/file/bcms-installation/Content/Styles/css/hover_pack.css" rel="stylesheet" />
+@*<link href="/file/bcms-installation/Content/Styles/css/font-awesome.css" rel="stylesheet" />*@
+<link href="/file/bcms-installation/Content/Styles/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+<script src="/file/bcms-installation/Scripts/Js/isotope.min.js"></script>
+<link href="/file/bcms-installation/Content/Styles/animate.css" rel="stylesheet" />
+
+<script src="/file/bcms-installation/Scripts/widget/jquery.flexslider.js"></script>
+<script src="/file/bcms-installation/Scripts/widget/jquery.js"></script>
+<script src="/file/bcms-installation/Scripts/widget/bootstrap.js"></script>
+<script src="/file/bcms-installation/Scripts/widget/jquery.isotope.min.js"></script>
+<script src="/file/bcms-installation/Scripts/widget/jetmenu.js"></script>
+<script src="/file/bcms-installation/Scripts/widget/application.js"></script>
+<script src="/file/bcms-installation/Scripts/widget/bootstrap.js"></script>
+<script src="/file/bcms-installation/Scripts/widget/jquery.simple-text-rotator.js"></script>
+<script src="/file/bcms-installation/Scripts/widget/jquery.unveilEffects.js"></script>
+<script>
+    function openCity(evt, cityName) {
+        // Declare all variables
+        var i, tabcontent, tablinks;
+
+        // Get all elements with class="tabcontent" and hide them
+        tabcontent = document.getElementsByClassName("tabcontent");
+        for (i = 0; i < tabcontent.length; i++) {
+            tabcontent[i].style.display = "none";
+        }
+
+        // Get all elements with class="tablinks" and remove the class "active"
+        tablinks = document.getElementsByClassName("tablinks");
+        for (i = 0; i < tablinks.length; i++) {
+            tablinks[i].className = tablinks[i].className.replace(" active", "");
+        }
+
+        // Show the current tab, and add an "active" class to the button that opened the tab
+        document.getElementById(cityName).style.display = "block";
+        evt.currentTarget.className += " active";
+    }
+</script>
+
+<style>
+    div.tab {
+    /*overflow: hidden;
+    border: 1px solid #ccc;*/
+    background-color: white;
+}
+
+/* Style the buttons inside the tab */
+div.tab button {
+    /*background-color: inherit;*/
+    float: left;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    padding: 25px 16px;
+    transition: 0.3s;
+    font-size:14px;
+    font-family:Oswald-Bold;
+    color:white;
+    width: 32%;
+    background-image: linear-gradient(to bottom, #858585 0%, #858585 100%);
+    margin-right:2%;
+}
+
+/* Change background color of buttons on hover */
+div.tab button:hover {
+    background-color: #ddd;
+}
+
+/* Create an active/current tablink class */
+div.tab button.active {
+    //background-image: linear-gradient(to bottom, #858585 0%, #858585 100%);
+    background-image: linear-gradient(to bottom, #00a4db 0%, #007acc 100%);
+}
+
+/* Style the tab content */
+.tabcontent {
+    display: none;
+    /*padding: 6px 12px;
+    border: 1px solid #ccc;
+    border-top: none;*/
+}
+
+.grey-text{
+    font-family:OpenSans-Regular;
+    font-size:14px;
+    color:#696969;
+}
+    .table-titles {
+    padding: 18px;
+    background: #ececec;
+    
+    font-family:OpenSans-Bold;
+    font-size:14px;
+    color:black;
+}
+.col-lg-2.col-md-2.table-titles,.col-lg-10.col-md-10.table-titles {
+    padding-left:18px!important;
+}
+
+.tabcontent-row{
+    padding-top: 18px;
+    padding-bottom: 18px;
+    padding-left: 18px;
+    border-bottom: 1px solid #a4a4a4;
+    font-family:OpenSans-Regular;
+    font-size:14px;
+    color:black;
+}
+.tabcontent-para p{
+    padding-bottom:15px;
+}
+.tabcontent-para p:last-of-type{
+    padding-bottom:0px;
+}
+.tabcontent-para {
+    margin-bottom:35px;
+}
+.tabcontent-para p.content-text.sub-heading {
+    font-family:Oswald-Bold!important;
+    padding-bottom:0px!important;
+    font-size:16px!important;
+}
+#Researchexperience .tabcontent-row .col-lg-10.col-md-10 p{
+    padding-bottom:3px!important;
+}
+</style>
+<div>
+    <div class="topbar">
+        <div class="container">
+            
+
+
+            @RenderSection("CMSHeader1", false)
+        </div>
+    </div>
+    <header class="header-wrapper">
+        <div class="container">
+            <div class="site-header clearfix">
+                <div id="nav" class="affix-top">
+                    <div class="col-lg-3 col-md-3 col-sm-12 title-area pull-left">
+                        <div class="site-title" id="title">
+                            @RenderSection("CMSHeader2", false)
+                        </div><!-- site title -->
+                    </div><!-- title area -->
+                    
+                    <div class="col-lg-9 col-md-9 col-sm-12" style="margin-top:30px">
+                        @RenderSection("CMSHeader3", false)
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+</div>
+
+
+
+<div>
+    <div>
+        <section class="section-whitebg" style="padding-bottom:50px;padding-top:0px;">
+            <div class="container">
+                @*<div class="tab">
+                    <button class="tablinks active" onclick="openCity(event, 'Overview')">Overview</button>
+                    <button class="tablinks" onclick="openCity(event, 'Researchexperience')" style="float:left;">Research Experience</button>
+                    <button class="tablinks" onclick="openCity(event, 'Publications')" style="float:right;margin-right:0px;">Publications</button>
+                </div>*@
+                <div class="tabcontent" id="Overview" style="display:block;">
+                    @RenderSection("CMSTab1", false)
+                </div>
+
+
+
+                <div class="tabcontent" id="Researchexperience">
+                    @RenderSection("CMSTab2", false)
+                </div>
+
+
+                <div class="tabcontent" id="Publications">
+                    @*<div class="tabcontent-para">
+                        <p>Dr. Vinod Ravindran received his undergraduate medical education (MBBS) from MGM Medical College, Indore and post-graduation in internal medicine (MD) from SMS Medical College, Jaipur, India. His further training was in the UK. He was awarded MRCP (UK) by the Royal College of Physicians of UK. He had rheumatology specialist training at London and was awarded the certificate of completion of specialist training CCT-Rheumatology (UK) by the Postgraduate Medical Education & Training Board of the UK.</p>
+                        <p>In addition he also undertook MSc-Rheumatology from the King’s College in London, UK. He subsequently passed SCE-Rheumatology and was awarded MRCP- Rheumatology (UK) by the Joint Royal Colleges of Physicians Training Board of UK. He was elected a Fellow of the Royal College of Physicians of Edinburgh (FRCP) in 2011.</p>
+                    </div>
+
+                    <div class="tabcontent-para">
+
+
+                        <div>
+                            <div class="row">
+                                <div class="col-lg-2 col-md-2 table-titles"><p>YEAR</p></div>
+                                <div class="col-lg-10 col-md-10 table-titles"><p>DETAILS</p></div>
+                            </div>
+                            <div class="row tabcontent-row">
+                                <div class="col-lg-2 col-md-2"><p>2014</p></div>
+                                <div class="col-lg-10 col-md-10">
+                                    <p><strong>Ravindran V et al. Deflazacort in rheumatology: Where does it stand? </strong><br>Indian Journal of Rheumatology 2014 (in press).</p>
+                                    <p><strong>Thabah M, Ravindran V. Musculoskeletal problems in pregnancy. </strong><br>Rheumatology International 2014 (in press).</p>
+                                    <p><strong>Ravindran V et al. Why Leg Ulcers Do Not Heal? a Prospective Study Showing High Proportion of Small Vessel Vasculitis</strong><br>Arthritis & Rheumatology 2014; 66(11): S1211-12.</p>
+                                    <p><strong>Ravindran V et al. Performance of the 2010 ACR/EULAR classification criteria for rheumatoid arthritis in a prospective early arthritis cohort in Kerala, India.</strong><br>Indian Journal of Rheumatology 2014; 9:107-111.</p>
+                                    <p><strong>Ravindran V . Rheumatology in the Indian sub-continent: Lessons relevant to the UK.</strong><br>Rheumatology (Oxford) 2014; 53(SI): 17.</p>
+                                    <p><strong>Ravindran V . Drugs in rheumatology practice. In: Rheumatology in Primary Care</strong><br>2nd ed, Wagh S (ed), National Book Depot 2014; pp.106-112.</p>
+                                    <p><strong>Ravindran V. Glucocorticoid therapy in rheumatic diseases. In: Manual of Rheumatology</strong><br>4th Ed, Rao URK et al (Eds), Indian Rheumatology Association 2014; pp.150-159.</p>
+                                    <p><strong>Ravindran V et al. Traditional and inflammation related cardiovascular risk in rheumatoid arthritis.</strong><br>Indian Journal of Rheumatology 2014; 9: 2-3.</p>
+                                </div>
+                            </div>
+                            <div class="row tabcontent-row">
+                                <div class="col-lg-2 col-md-2"><p>2013</p></div>
+                                <div class="col-lg-10 col-md-10">
+                                    <p><strong>Ravindran V. Rheumatology outcome measures in principle and practice in India: So near and yet so far. </strong><br>Indian Journal of Rheumatology 2013; 8(S1):8-10.</p>
+                                    <p><strong>Ravindran V et al. The effect of rheumatoid arthritis disease education on adherence to medication and follow ups in Kerala, India </strong><br>Journal of Rheumatology 2013; 40:1460-1.</p>
+                                    <p><strong>Ravindran V . Systemic vasculitis and pregnancy. In: Rheumatic Diseases in Women & Children</strong><br>1st ed, Sharma SK & Sawhney S (eds), Jaypee Brothers Medical Publishers (P) Ltd 2013; pp.44-49.</p>
+                                    <p><strong>Ravindran V et al. How to appraise a scientific paper.</strong><br>Indian Journal of Rheumatology 2013; 8: 27-29.</p>
+                                    <p><strong>Ravindran V et al. Primary antiphospholipid syndrome in monozygotic twins. </strong><br>Lupus 2013; 22: 92-94.</p>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>*@
+                    @RenderSection("CMSTab3", false)
+                </div>
+
+
+
+
+
+            </div><!-- end container -->
+        </section>
+    </div>
+
+</div>
+
+
+
+
+<footer>
+    <div>
+        <div id="footer" class="main-content">
+            
+            @RenderSection("CMSFooter", false)
+        </div>
+    </div>
+</footer>
+

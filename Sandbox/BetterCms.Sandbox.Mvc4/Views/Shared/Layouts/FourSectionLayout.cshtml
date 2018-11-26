@@ -1,0 +1,41 @@
+﻿
+@using BetterCms.Module.Root.Mvc.Helpers
+@using BetterCms.Module.Installation
+
+@{
+    Layout = "~/Areas/bcms-Root/Views/Shared/BaseLayout.cshtml";
+}
+@section Styles {
+    @RenderSection("Styles", false)
+
+}
+
+<link rel="stylesheet" href="/file/bcms-installation/content/styles/bootstrap.css" />
+@*<link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css" />*@
+
+<script src="/file/bcms-installation/Scripts/jquery.min.js"></script>
+<script src="/file/bcms-installation/Scripts/js/bootstrap.min.js"></script>
+<header>
+    <div>
+        @RenderSection("CMSHeader", false)
+    </div>
+</header>
+
+<div>
+
+    @RenderSection("CMSMainContent1", false)
+    @RenderBody()
+</div>
+
+<div>
+
+    @RenderSection("CMSMainContent2", false)
+   
+</div>
+
+
+<footer>
+    <div>
+        @RenderSection("CMSFooter", false)
+    </div>
+</footer>

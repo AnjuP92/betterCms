@@ -1,0 +1,1117 @@
+﻿@model BetterCms.Module.Root.ViewModels.Cms.RenderPageViewModel
+
+
+<!DOCTYPE html>
+
+<html>
+
+@*<title>@ViewBag.Title</title>*@
+@section CmsHeadScripts {
+    <head>
+        
+
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="last-modified" content="2015-09-29@12:22:00 GMT" />
+        <title>NYC English</title>
+
+        <meta name="description" content=" Using high definition videos, music, and animations, NYC English engages you with authentic English language communication. You, the learner, can watch and hear your mentors and practice simple communicative tasks with our voice recognition tool, apply grammar rules to conversations, and improve your speaking skills with our key words. Each NYCE lesson models teaching ideas for educators, simple classroom activities, and role plays. With 90 themes available, you are able to learn and practice a variety of English concepts in a fun and engaging way!">
+        <link rel="stylesheet" href="/css/main.css?v=1" />
+        <link rel="stylesheet" href="/css/modal.css?v=1" />
+        <link rel="stylesheet" href="/slick/slick.css?v=1" />
+        <link rel="stylesheet" href="/css/Expand.css?v=1" />
+        <link rel="stylesheet" href="/css/responsive.css?v=1" />
+        <link rel="stylesheet" href="/css/responsive_1.css?v=1" />
+        <link rel="stylesheet" href="/css/swiper.min.css?v=1">
+        <script type="text/javascript">
+            var contryIconWidth;
+            if (document.images)
+                (new Image()).src = "/images/logo_small_1.png";
+            (new Image()).src = "/images/banner_img.jpg";
+            (new Image()).src = "/images/user_1.png";
+            (new Image()).src = "/images/user_2.png";
+            (new Image()).src = "/images/user_3.png";
+
+        </script>
+        <script type="text/javascript" src="~/js/jquery-1.11.1.js?v=1"></script>
+        @*<script src="/js/jquery.carouFredSel.js" type="text/javascript"></script>*@
+        @*<script type="text/javascript" src="/js/jquery-migrate-1.2.1.js?v=1"></script>*@
+        @*<script type="text/javascript" src="/js/configuration.js?v=1"></script>*@
+        <script type="text/javascript">
+           
+            function resumeSlider() {
+                if ($('#banner-mobile').css('display') == 'block') {
+                    $('#wrapper').css('height', '40px');
+                    $('#wrapper').css('bottom', '5px');
+                    $('.bannerTextContainer').css('height', '120px');
+                    //                $('#heading .InnerText').css('font-size', '15px');
+                    $('#carousel div').css('width', '150px');
+                    contryIconWidth = $('#carousel .contryIcon').width();
+                } else {
+                    $('.caroufredsel_wrapper').css('top', '14px');
+                    $('.caroufredsel_wrapper').css('width', '100%').css('width', '+=500px');
+                    $('.caroufredsel_wrapper').css('height', '100%');
+                    $('.caroufredsel_wrapper').css('top', '0px');
+                    $('#carousel2 .contryIcon').css('font-size', '13px');
+                    contryIconWidth = $('#carousel2 .contryIcon').width();
+                }
+
+            }
+
+            //$(function () {
+            //    var $c = $('#carousel');
+            //    $w = $(window);
+            //    $c.carouFredSel({
+            //        align: false,
+            //        items: 15,
+            //        scroll: {
+            //            items: 1,
+            //            responsive: true,
+            //            duration: 2500,
+            //            timeoutDuration: 0,
+            //            easing: 'linear',
+            //            pauseOnHover: 'immediate'
+            //        }
+            ////    });
+                $w.bind('resize.example', function () {
+                    $c.width('100%');
+                    $c.parent().width('100%');
+                    $c.height('100%');
+                    $c.parent().width('100%');
+                    $('.caroufredsel_wrapper').width($('#wrapper').width() + 500);
+                    $('.caroufredsel_wrapper').height('100%');
+                }).trigger('resize.example');
+
+                $c.width('100%');
+                $c.parent().width('100%');
+                $c.height('100%');
+                $c.parent().width('100%');
+                $('.caroufredsel_wrapper').width($('#wrapper').width() + 500);
+                $('.caroufredsel_wrapper').height('100%');
+                $('#wrapper').css('height', '40px');
+                $('#wrapper').css('bottom', '5px');
+                $('.bannerTextContainer').css('height', '120px');
+                $('#carousel .contryIcon').css('font-size', '15px');
+                $('#carousel div').css('width', '130px');
+                contryIconWidth = $('#carousel .contryIcon').width();
+          //  });
+            $(function () {
+                var $ca = $('#carousel2');
+                $wa = $(window);
+                $ca.carouFredSel({
+                    align: false,
+                    items: 12,
+                    scroll: {
+                        items: 1,
+                        duration: 2500,
+                        timeoutDuration: 0,
+                        easing: 'linear',
+                        pauseOnHover: 'immediate'
+                    }
+                });
+                $wa.bind('resize.example', function () {
+                    $ca.width('100%');
+                    $ca.parent().width('100%');
+                    $ca.height('100%');
+                    $ca.parent().width('100%');
+                    $('.caroufredsel_wrapper').css('top', '14px');
+                    $('.caroufredsel_wrapper').css('width', '100%').css('width', '+=500px');
+                    $('.caroufredsel_wrapper').css('height', '100%');
+                    $('.caroufredsel_wrapper').css('top', '0px');
+                    $('#carousel2 .contryIcon').css('font-size', '13px');
+                }).trigger('resize.example');
+                contryIconWidth = $('#carousel2 .contryIcon').width();
+
+            });
+            $(document).ready(function () {
+                $('#showHideMenu').click(function () {
+                    alert("showHideMenu");
+                });
+                var vid = document.getElementById('vdo');
+                if ($('#banner-mobile').css('display') == 'block')
+                    contryIconWidth = $('#carousel .contryIcon').width();
+                else
+                    contryIconWidth = $('#carousel2 .contryIcon').width();
+
+                $('#btnVideo').click(function () {
+                    document.getElementById('vdo').play();
+                    $('#modalVideo').css('display', 'block');
+                });
+                $('#getStarted').click(function () {
+                    $('#modalGetInfo').css('display', 'block');
+                });
+
+                $('.LoginContainer a.FreeTrial').on("click", function () {
+                    window.open("https://www.nycenglish.net/register.html", "_blank");
+                });
+
+                $('.modalGetInfo-body .item:nth-of-type(1)').click(function () {
+                    window.open("http://placementtest.nycenglish.net/", "_blank");
+                });
+
+                $('.modalGetInfo-body .item:nth-of-type(2)').click(function () {
+                    window.open("https://www.nycenglish.net/", "_blank");
+                });
+
+                $('.modalGetInfo-body .item:nth-of-type(3)').click(function () {
+                    window.open("http://lms.nyceonline.nyc/", "_blank");
+                });
+
+                $('.cross').click(function () {
+                    document.getElementById('vdo').pause();
+                    document.getElementById('vdo').currentTime = 0;
+                    $('#modalVideo').css('display', 'none');
+                });
+                $('.modalGetInfo-header .cross').click(function () {
+                    $('#modalGetInfo').css('display', 'none');
+                });
+
+                //$('#modalVideo').css('display', 'block');
+
+                $("#vdo").bind('timeupdate', onVideoTimeupdate);
+
+                function onVideoTimeupdate() {
+                    try {
+                        if (this.duration > 0) {
+                            if (this.currentTime >= this.duration) {
+                                $('#modalVideo').css('display', 'none');
+                            }
+                        }
+                    } catch (e) {
+                        //alert(e);
+                    }
+                }
+
+            });
+            $(window).resize(function () {
+                $('#carousel2').trigger('mouseout');
+                $('#carousel').trigger('mouseout');
+                resumeSlider();
+            });
+
+        </script>
+        <script type="text/javascript" src="/js/page.js?v=1"></script>
+        <script type="text/javascript" src="/js/mail.js?v=1"></script>
+        <script type="text/javascript" src="/js/features.js?v=1"></script>
+        <script src="/js/swiper.min.js?v=1"></script>
+        <script type="text/javascript" src="/js/jquery.touchswipe.js?v=1"></script>
+        <script src="/js/swipeScroll.js?v=1"></script>
+        <script src="/js/app.js?v=1"></script>
+        <script src="/js/modernizr.js?v=1"></script>
+    </head>
+}
+
+
+
+
+
+@{
+    Layout = "~/Areas/bcms-Root/Views/Shared/BaseLayout.cshtml";
+}
+
+
+
+
+<body style="min-height: inherit; min-width: 320px;">
+    <script type="text/javascript">
+
+
+    </script>
+    <div id="mainContainer">
+        <div class="LoginContainer">
+            <a class="videobtn" id="btnVideo"></a>
+            <!--
+                        <a class="LoginCourse" href="http://www.nycenglish.net/" target="_blank"></a>
+                        <a class="PlacementTest" href="http://placementtest.nycenglish.net/" target="_blank"></a>
+                        <a class="Logindashboard" href="http://lms.nyceonline.nyc/" target="_blank"></a>
+            -->
+            <a class="Logindashboard" target="_blank" id="getStarted"></a>
+            <a class="FreeTrial" target="_blank" id="getTrial"></a>
+        </div>
+        @*<div class="modal">
+            <div class="modalLogo">
+                <img src="/images/logo_small_1.png" />
+            </div>
+            <div class="img_working">
+            </div>
+            <div class="modalText">
+                <h4>
+                    Please standby..
+                </h4>
+            </div>
+        </div>*@
+        <!--Banner Mobile -->
+        <div class="mobile-header nav-down" id="mobile_header" style="z-index: 777777">
+            <div id="showHideMenu" class="show-hide-menu s-buttonNew" data-sidebar-button="">
+                <img src="/images/icon_menu.png" />
+            </div>
+            <div id="mobile-logo">
+                <img src="/images/banner_logo.png" />
+            </div>
+        </div>
+        <div data-sidebar-overlay="" class="overlay" style="display: block; opacity: 0.5;">
+        </div>
+        <div id="aside" data-sidebar="" style="z-index: 888888">
+            <div class="sidebar-top">
+                <div style="width: 55px;">
+                    <img src="/images/logo_small.png" class="logo-mobile">
+                </div>
+            </div>
+            <div style="overflow-x: hidden; overflow-y: hidden; clear: both; height: 70%" id="mobile-menu">
+                <ul id="nav_menu" class="nav-menu">
+                    <li>
+                        <a name="#banner-mobile" id="home-link" onclick="makeSelected(this);" class="active">
+                            Home
+                        </a>
+                    </li>
+                    <li>
+                        <a name="#feature" id="feature-link" onclick="makeSelected(this);">Features</a>
+                    </li>
+                    <li>
+                        <a name="#download-mobile" id="download-link" onclick="makeSelected(this);">Download</a>
+                    </li>
+                    <li><a name="#faq" id="faq-link" onclick="makeSelected(this);">FAQ</a> </li>
+                    <li>
+                        <a name="#aboutUs" id="about-link" onclick="makeSelected(this);">About us</a>
+                    </li>
+                    <li>
+                        <a name="#contectUs" id="contact-link" onclick="makeSelected(this);">Contact us</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="section" id="banner-mobile">
+            <!--<img alt="" src="/images/mobile_banner.jpg" />-->
+            <div id="user_img_mobile">
+                <div class="user_img_mobile" id="user_m_1">
+                </div>
+                <div class="user_img_mobile" id="user_m_2">
+                </div>
+                <div class="user_img_mobile" id="user_m_3">
+                </div>
+                <div class="user_img_mobile" id="user_m_4">
+                </div>
+                <div class="user_img_mobile" id="user_m_5">
+                </div>
+                <div class="user_img_mobile" id="user_m_6">
+                </div>
+                <div class="user_img_mobile" id="user_m_7">
+                </div>
+                <div class="user_img_mobile" id="user_m_8">
+                </div>
+                <div class="user_img_mobile" id="user_m_9">
+                </div>
+                <div class="user_img_mobile" id="user_m_10">
+                </div>
+                <div class="user_img_mobile" id="user_m_11">
+                </div>
+            </div>
+            <div class="row">
+                <div class="large-4 medium-4 small-12 column bannerTextContainer">
+                    <div id="bannerBox-mobile">
+                        <div id="heading" style="line-height:75px;">
+                            <span class="InnerText"></span>
+                        </div>
+                        <div id="countries-mobile" style="width: 100%; height: 40%; color: #262626;
+                            xline-height: 30px;">
+                            <!--         MOBILE CAROUSEL           -->
+                            <div id="wrapper">
+                                <div id="carousel">
+                                    <div id="vietnam_Img" country="vietnam" class="contryIcon">
+                                        <img alt="" src="/images/flag_vietnam.png" /><span style="margin-left:10px;color:white;font-size:15px;font-family:Arial;font-weight:bold;">Vietnam</span>
+                                    </div>
+                                    <div id="china_Img" country="china" class="contryIcon">
+                                        <img alt="" src="/images/flag_china.png" />
+                                        <span style="margin-left:10px;color:white;font-size:15px;font-family:Arial;font-weight:bold;">China</span>
+                                    </div>
+
+                                    <div id="columbia_Img" country="columbia" class="contryIcon">
+                                        <img alt="" src="/images/flag_columbia.png" /><span style="margin-left:10px;color:white;font-size:15px;font-family:Arial;font-weight:bold;">Colombia</span>
+                                    </div>
+                                    <div id="cyprus_Img" country="cyprus" class="contryIcon">
+                                        <img alt="" src="/images/flag_cyprus.png" /><span style="margin-left:10px;color:white;font-size:15px;font-family:Arial;font-weight:bold;">Cyprus</span>
+                                    </div>
+                                    <div id="ecuador_Img" country="ecuador" class="contryIcon">
+                                        <img alt="" src="/images/flag_ecuador.png" /><span style="margin-left:10px;color:white;font-size:15px;font-family:Arial;font-weight:bold;">Ecuador</span>
+                                    </div>
+                                    <div id="greece_Img" country="greece" class="contryIcon">
+                                        <img alt="" src="/images/flag_greece.png" /><span style="margin-left:10px;color:white;font-size:15px;font-family:Arial;font-weight:bold;">Greece</span>
+                                    </div>
+                                    <div id="hongkong_Img" country="hongkong" class="contryIcon">
+                                        <img alt="" src="/images/flag_hongkong.png" />
+                                        <span style="margin-left:10px;color:white;font-size:15px;font-family:Arial;font-weight:bold;">Hong Kong</span>
+                                    </div>
+                                    <div id="indonasia_Img" country="indonasia" class="contryIcon">
+                                        <img alt="" src="/images/flag_indonesia.png" />
+                                        <span style="margin-left:10px;color:white;font-size:15px;font-family:Arial;font-weight:bold;">Indonesia</span>
+                                    </div>
+                                    <div id="india_Img" country="india" class="contryIcon">
+                                        <img alt="" src="/images/flag_india.png" /><span style="margin-left:10px;color:white;font-size:15px;font-family:Arial;font-weight:bold;">India</span>
+                                    </div>
+                                    <div id="japan_Img" country="japan" class="contryIcon">
+                                        <img alt="" src="/images/flag_japan.png" />
+                                        <span style="margin-left:10px;color:white;font-size:15px;font-family:Arial;font-weight:bold;">Japan</span>
+                                    </div>
+                                    <div id="korea_Img" country="korea" class="contryIcon">
+                                        <img alt="" src="/images/flag_korea.png" />
+                                        <span style="margin-left:10px;color:white;font-size:15px;font-family:Arial;font-weight:bold;">Korea</span>
+                                    </div>
+                                    <div id="malaysia_Img" country="malaysia" class="contryIcon">
+                                        <img alt="" src="/images/flag_malaysia.png" /><span style="margin-left:10px;color:white;font-size:15px;font-family:Arial;font-weight:bold;">Malaysia</span>
+                                    </div>
+                                    <div id="mexico_Img" country="mexico" class="contryIcon">
+                                        <img alt="" src="/images/flag_mexico.png" /><span style="margin-left:10px;color:white;font-size:15px;font-family:Arial;font-weight:bold;">Mexico</span>
+                                    </div>
+                                    <div id="myanmar_Img" country="myanmar" class="contryIcon">
+                                        <img alt="" src="/images/flag_myanmar.png" /><span style="margin-left:10px;color:white;font-size:15px;font-family:Arial;font-weight:bold;">Myanmar</span>
+                                    </div>
+                                    <div id="philippines_Img" country="philippines" class="contryIcon">
+                                        <img alt="" src="/images/flag_philippines.png" /><span style="margin-left:10px;color:white;font-size:15px;font-family:Arial;font-weight:bold;">Philippines</span>
+                                    </div>
+                                    <div id="poland_Img" country="poland" class="contryIcon">
+                                        <img alt="" src="/images/flag_poland.png" /><span style="margin-left:10px;color:white;font-size:15px;font-family:Arial;font-weight:bold;">Poland</span>
+                                    </div>
+                                    <div id="singapore_Img" country="singapore" class="contryIcon">
+                                        <img alt="" src="/images/flag_singapore.png" /><span style="margin-left:10px;color:white;font-size:15px;font-family:Arial;font-weight:bold;">Singapore</span>
+                                    </div>
+                                    <div id="srilanka_Img" country="srilanka" class="contryIcon">
+                                        <img alt="" src="/images/flag_srilanka.png" /><span style="margin-left:10px;color:white;font-size:15px;font-family:Arial;font-weight:bold;">Sri Lanka</span>
+                                    </div>
+                                    <div id="thailand_Img" country="thailand" class="contryIcon">
+                                        <img alt="" src="/images/flag_thailand.png" /><span style="margin-left:10px;color:white;font-size:15px;font-family:Arial;font-weight:bold;">Thailand</span>
+                                    </div>
+                                    <div id="usa_Img" country="usa" class="contryIcon">
+                                        <img alt="" src="/images/flag_usa.png" /><span style="margin-left:10px;color:white;font-size:15px;font-family:Arial;font-weight:bold;">Usa</span>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- -->
+        <div class="section" id="banner" style="position: relative;overflow:hidden;">
+            <img alt="" src="/images/banner_img.jpg" />
+            <div class="row" style="position: absolute; top: 0; height: 100%; padding-top: 12px">
+                <div id="userImage" class="large-4 medium-4 small-12 column" style="position: relative">
+                    <div class="user_img" id="user_1">
+                    </div>
+                    <div class="user_img" id="user_2">
+                    </div>
+                    <div class="user_img" id="user_3">
+                    </div>
+                    <div class="user_img" id="user_4">
+                    </div>
+                    <div class="user_img" id="user_5">
+                    </div>
+                    <div class="user_img" id="user_6">
+                    </div>
+                    <div class="user_img" id="user_7">
+                    </div>
+                    <div class="user_img" id="user_8">
+                    </div>
+                    <div class="user_img" id="user_9">
+                    </div>
+                    <div class="user_img" id="user_10">
+                    </div>
+                    <div class="user_img" id="user_11">
+                    </div>
+                </div>
+                <!--------------->
+                <div class="large-4 medium-7 small-12 column textContainer" style="width:96%;position:absolute;top:44%;left:2%">
+                    <div id="heading" class="heading" style="position:absolute; bottom: 76%;left:35%;width:22%;color:black;">
+                        <span class="InnerText"></span>
+                    </div>
+                    <div id="bannerBox" style="">
+                        <div id="countries-desktop" style="width: 100%; font-size: 14px; color: #262626;">
+                            <div id="wrapper2">
+                                <div id="carousel2">
+                                    <div id="vietnam_Img" country="vietnam" class="contryIcon">
+                                        <img alt="" src="/images/flag_vietnam.png" class="IconWidth" />
+                                        <span style="margin-left:10px;color:white;font-size:18px;font-family:Arial;font-weight:bold;">Vietnam</span>
+                                    </div>
+
+                                    <div id="china_Img" country="china" class="contryIcon">
+                                        <img alt="" src="/images/flag_china.png" class="IconWidth" />
+                                        <span style="margin-left:10px;color:white;font-size:18px;font-family:Arial;font-weight:bold;">China</span>
+                                    </div>
+                                    <div id="columbia_Img" country="columbia" class="contryIcon">
+                                        <img alt="" src="/images/flag_columbia.png" class="IconWidth" />
+                                        <span style="margin-left:10px;color:white;font-size:18px;font-family:Arial;font-weight:bold;">Colombia</span>
+                                    </div>
+                                    <div id="cyprus_Img" country="cyprus" class="contryIcon">
+                                        <img alt="" src="/images/flag_cyprus.png" class="IconWidth" /><span style="margin-left:10px;color:white;font-size:18px;font-family:Arial;font-weight:bold;">Cyprus</span>
+                                    </div>
+                                    <div id="ecuador_Img" country="ecuador" class="contryIcon">
+                                        <img alt="" src="/images/flag_ecuador.png" class="IconWidth" />
+                                        <span style="margin-left:10px;color:white;font-size:18px;font-family:Arial;font-weight:bold;">Ecuador</span>
+                                    </div>
+                                    <div id="greece_Img" country="greece" class="contryIcon">
+                                        <img alt="" src="/images/flag_greece.png" class="IconWidth" /><span style="margin-left:10px;color:white;font-size:18px;font-family:Arial;font-weight:bold;">Greece</span>
+                                    </div>
+                                    <div id="hongkong_Img" country="hongkong" class="contryIcon">
+                                        <img alt="" src="/images/flag_hongkong.png" class="IconWidth" />
+                                        <span style="margin-left:10px;color:white;font-size:18px;font-family:Arial;font-weight:bold;">Hong Kong</span>
+                                    </div>
+                                    <div id="indonasia_Img" country="indonasia" class="contryIcon">
+                                        <img alt="" src="/images/flag_indonesia.png" class="IconWidth" />
+                                        <span style="margin-left:10px;color:white;font-size:18px;font-family:Arial;font-weight:bold;">Indonesia</span>
+                                    </div>
+                                    <div id="india_Img" country="india" class="contryIcon">
+                                        <img alt="" src="/images/flag_india.png" class="IconWidth" /><span style="margin-left:10px;color:white;font-size:18px;font-family:Arial;font-weight:bold;">India</span>
+                                    </div>
+                                    <div id="japan_Img" country="japan" class="contryIcon">
+                                        <img alt="" src="/images/flag_japan.png" class="IconWidth" />
+                                        <span style="margin-left:10px;color:white;font-size:18px;font-family:Arial;font-weight:bold;">Japan</span>
+                                    </div>
+                                    <div id="korea_Img" country="korea" class="contryIcon">
+                                        <img alt="" src="/images/flag_korea.png" class="IconWidth" />
+                                        <span style="margin-left:10px;color:white;font-size:18px;font-family:Arial;font-weight:bold;">Korea</span>
+                                    </div>
+                                    <div id="malaysia_Img" country="malaysia" class="contryIcon">
+                                        <img alt="" src="/images/flag_malaysia.png" class="IconWidth" />
+                                        <span style="margin-left:10px;color:white;font-size:18px;font-family:Arial;font-weight:bold;">Malaysia</span>
+                                    </div>
+                                    <div id="mexico_Img" country="mexico" class="contryIcon">
+                                        <img alt="" src="/images/flag_mexico.png" class="IconWidth" />
+                                        <span style="margin-left:10px;color:white;font-size:18px;font-family:Arial;font-weight:bold;">Mexico</span>
+                                    </div>
+                                    <div id="myanmar_Img" country="myanmar" class="contryIcon">
+                                        <img alt="" src="/images/flag_myanmar.png" class="IconWidth" />
+                                        <span style="margin-left:10px;color:white;font-size:18px;font-family:Arial;font-weight:bold;">Myanmar</span>
+                                    </div>
+                                    <div id="philippines_Img" country="philippines" class="contryIcon">
+                                        <img alt="" src="/images/flag_philippines.png" class="IconWidth" />
+                                        <span style="margin-left:10px;color:white;font-size:18px;font-family:Arial;font-weight:bold;">Philippines</span>
+                                    </div>
+                                    <div id="poland_Img" country="poland" class="contryIcon">
+                                        <img alt="" src="/images/flag_poland.png" class="IconWidth" />
+                                        <span style="margin-left:10px;color:white;font-size:18px;font-family:Arial;font-weight:bold;">Poland</span>
+                                    </div>
+                                    <div id="singapore_Img" country="singapore" class="contryIcon">
+                                        <img alt="" src="/images/flag_singapore.png" class="IconWidth" />
+                                        <span style="margin-left:10px;color:white;font-size:18px;font-family:Arial;font-weight:bold;">Singapore</span>
+                                    </div>
+                                    <div id="srilanka_Img" country="srilanka" class="contryIcon">
+                                        <img alt="" src="/images/flag_srilanka.png" class="IconWidth" />
+                                        <span style="margin-left:10px;color:white;font-size:18px;font-family:Arial;font-weight:bold;">Sri Lanka</span>
+                                    </div>
+                                    <div id="thailand_Img" country="thailand" class="contryIcon">
+                                        <img alt="" src="/images/flag_thailand.png" class="IconWidth" />
+                                        <span style="margin-left:10px;color:white;font-size:18px;font-family:Arial;font-weight:bold;">Thailand</span>
+                                    </div>
+                                    <div id="usa_Img" country="usa" class="contryIcon">
+                                        <img alt="" src="/images/flag_usa.png" class="IconWidth" />
+                                        <span style="margin-left:10px;color:white;font-size:18px;font-family:Arial;font-weight:bold;">USA</span>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                        <!------------------------------------------------------------------>
+                    </div>
+                </div>
+            </div>
+            <div id="logoImage" class="large-4 medium-4 small-12 column end" style="position:absolute;top:1%;left:63%;">
+                <img alt="" src="/images/banner_logo.png">
+            </div>
+        </div>
+    </div>
+    <div id="navAnchor">
+    </div>
+    <div style="width: 100%; background-color: white; z-index: 1000" id="sticky_navigation">
+        <div style="width: 20%; height: 100px; float: left">
+            <div id="logoMenu" style="display: none; width: 100%; height: 100%; padding: 30px">
+                <a onclick="smoothScroll('banner')">
+                    <img alt="" src="/images/logo_small.png" />
+                </a>
+            </div>
+        </div>
+        <div class="demo_container">
+            <ul id="top-menu">
+                <li>
+                    <a name="#feature" id="fLink" onclick="activeClass(this);">
+                        <img alt="" src="/images/icon_features.png" id="featureLink" />
+                        <span>Features</span>
+                    </a>
+                </li>
+                <li>
+                    <a name="#download" id="dLink" onclick="activeClass(this);">
+                        <img alt="" src="/images/icon_dwonload.png" id="downloadLink" />
+                        <span>Download</span>
+                    </a>
+                </li>
+                <li>
+                    <a name="#faq" id="faLink" onclick="activeClass(this);">
+                        <img alt="" src="/images/icon_faq.png" id="faqLink" />
+                        <span>FAQ</span>
+                    </a>
+                </li>
+                <li>
+                    <a name="#aboutUs" id="abLink" onclick="activeClass(this);">
+                        <img alt="" src="/images/icon_aboutus.png" id="aboutLink" />
+                        <span>About Us</span>
+                    </a>
+                </li>
+                <li>
+                    <a name="#contectUs" id="cLink" onclick="activeClass(this);">
+                        <img alt="" src="/images/icon_contanctus.png" id="contactLink" />
+                        <span>Contact Us</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <!--FEATURE SECTION MOBILE -->
+
+
+    <div class="clearfix">
+    </div>
+    <div class="section" id="feature-mobile" style="z-index: 999">
+        <div class="row" style="max-width: 60rem">
+            <div class="large-12 featureSection">
+                <h1>
+                    Features
+                </h1>
+                <div style="margin: 20px 0 15px 0">
+                    <!-- Swiper -->
+                    <div class="swiper-container">
+                        <div class="swiper-wrapper">
+                            <div class="swiper-slide">
+                                <img src="/images/features_01.png" />
+                            </div>
+                            <div class="swiper-slide">
+                                <img src="/images/features_02.png" />
+                            </div>
+                            <div class="swiper-slide">
+                                <img src="/images/features_03.png" />
+                            </div>
+                            <div class="swiper-slide">
+                                <img src="/images/features_04.png" />
+                            </div>
+                            <div class="swiper-slide">
+                                <img src="/images/features_05.png" />
+                            </div>
+                            <div class="swiper-slide">
+                                <img src="/images/features_06.png" />
+                            </div>
+                        </div>
+                        <!-- Add Pagination -->
+                        <div class="swiper-pagination">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-------End--->
+    @RenderSection("FeatureContent", false)
+
+    @*-----------------feature content------------------------*@
+
+
+
+
+
+
+
+    @*<div class="clearfix">
+        </div>
+        <div class="section" id="featureIE" style="z-index: 999; display: none;">
+            <div class="row" style="xmax-width: 60rem">
+                <div class="large-12 featureSection">
+                    <h1>
+                        Features
+                    </h1>
+                    <div style="margin-top: 20px;">
+                        <div class="large-12  medium-12 small-12 columns" style="text-align: center;">
+                            <div id="featureBackgroundIE" style="position: relative; padding: 0; margin: 0 auto;">
+                                <img src="/images/features.png" />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="clearfix">
+        </div>
+        <div class="section" id="feature" style="z-index: 999">
+            <div class="row" style="xmax-width: 60rem">
+                <div class="large-12 featureSection">
+                    <h1>
+                        Features
+                    </h1>
+                    <div style="margin-top: 20px;">
+                        <div class="large-12  medium-12 small-12 columns" style="text-align: center;">
+                            <div id="featureBookMark">
+                            </div>
+                            <div id="featureBackground">
+                                <img src="/images/device1.png" class="featureImage animated " id="featureImage" />
+                                <section id="videoImages">
+                                    <img id="hdVideos" src="/images/device2.png" class="hideImage" />
+                                    <img id="translationFeature" src="/images/device4.png" class="hideImage" />
+                                    <img id="voiceRecording" src="/images/device5.png" class="hideImage" />
+                                    <img id="progressRecording" src="/images/device6.png" class="hideImage" />
+                                    <img id="showLines" src="/images/device7.png" class="hideImage" />
+                                    <img id="keywordsPlay" src="/images/device3.png" class="hideImage" />
+                                </section>
+                                <div id="videoPlayer">
+                                    <div id="crossButton" onclick="resetToInitialOnClick();">
+                                        <img src="/images/cross.png" />
+                                    </div>
+                                    <video id="myVideo" src="" controls preload></video>
+                                </div>
+                                <div id="hdCallout" class="hideCallout hdCallout animated bounce ">
+                                    <a id="hdCalloutImg" onclick="changeImageAndCallOut(this);">
+                                        <img id="hdCalloutImg1" src="/images/callout1.png" />
+                                        <span style="position: absolute; left: 12%; top: 25%; width: 65%;">HD Video</span>
+                                    </a>
+                                </div>
+                                <div class="hideCallout keyCallOut animated bounce">
+                                    <a id="keyCallOutImg" onclick="changeImageAndCallOut(this);">
+                                        <span style="position: absolute;
+                                            left: 12%; top: 25%; width: 65%;">Key Vocabulary</span>
+                                        <img id="keyCallOutImg1" src="/images/callout1.png" />
+                                    </a>
+                                </div>
+                                <div class="hideCallout transCallOut animated bounce">
+                                    <a id="transCallOutImg" onclick="changeImageAndCallOut(this);">
+                                        <span style="position: absolute;
+                                            left: 12%; top: 25%; width: 65%;">Translator Button</span>
+                                        <img id="transCallOutImg1" src="/images/callout1.png" />
+                                    </a>
+                                </div>
+                                <div class="hideCallout voiceCallOut animated bounce">
+                                    <a id="voiceCallOutImg" onclick="changeImageAndCallOut(this);">
+                                        <span style="position: absolute;
+                                            left: 21%; top: 22%; width: 65%;">Voice Recording</span>
+                                        <img id="voiceCallOutImg1" src="/images/callout6.png" />
+                                    </a>
+                                </div>
+                                <div class="hideCallout lineCallOut animated bounce">
+                                    <a id="lineCallOutImg" onclick="changeImageAndCallOut(this);">
+                                        <span style="position: absolute;
+                                            left: 12%; top: 25%; width: 65%;">Line-by-Line reading</span>
+                                        <img id="lineCallOutImg1" src="/images/callout1.png" />
+                                    </a>
+                                </div>
+                                <div class="hideCallout progressCallOut animated bounce">
+                                    <a id="progressCallOutImg" onclick="changeImageAndCallOut(this);">
+                                        <span style="position: absolute;
+                                            left: 25%; top: 21%; width: 65%;">Progress Checklist</span>
+                                        <img id="progressCallOutImg1" src="/images/callout5.png" />
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="clearfix">
+        </div>*@
+
+
+
+    @RenderSection("DownloadContent", false)
+
+    @*-------------------------------download content------------------------------------*@
+
+    @*<div class="clearfix">
+        </div>
+
+        <div class="section" id="download" style="z-index: 999;">
+            <div class="row" style="height: 100%;">
+                <div class="large-12 downloadSection">
+                    <h1 style="margin-bottom: 0;">
+                        Download
+                    </h1>
+                    <h2 style="font-size: 1.7em;">
+                        ANYWHERE. ANYTIME. ANY DEVICE.
+                    </h2>
+                    <div class="large-6 medium-6 small-12 columns downloadTextAlignment">
+                        <div class="large-12 medium-12 small-12 columns downloadText">
+                            <p>
+                                <b>
+                                    The best way to Learn.&nbsp;English.&nbsp;Fast. is on your device-desktop, Android
+                                    tablet, Android phone, iPad, or iPhone.
+                                </b>
+                            </p>
+                            <p>
+                                NYCE makes it easy for you to purchase and download the software. It's available on the <span style="color: #c0d2ff">App Store</span> and at <span style="color: #c0d2ff">
+                                    Google play
+                                </span>.
+                            </p>
+                        </div>
+                        <div class="large-12 medium-12 small-6 columns appImageContainer">
+                            <div class="large-6 medium-6 small-12 columns ">
+                                <a href="https://itunes.apple.com/us/app/nycenglish/id1022246281?ls=1&mt=8" target="_blank"><img alt="" src="/images/button_appstore.png" /></a>
+                            </div>
+                            <div class="large-6 medium-6 small-12 columns imgmargin">
+                                <a href="https://play.google.com/store/apps/details?id=com.vidyatech.biz&hl=en" target="_blank"><img alt="" src="/images/button_googleplay.png" /></a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="large-6 medium-6 small-6 columns end iLandscap" style="margin-top: 8em;" style="border: solid red 1px;">
+                        <img style="" alt="" src="/images/mobile.png" />
+                    </div>
+                </div>
+            </div>
+        </div>*@
+
+
+
+
+    @*----------------download section ends here--------------------------*@
+
+
+
+    <div class="section" id="download-mobile" style="z-index: 999;">
+        <div class="row" style="height: 100%;">
+            <div class="large-12 downloadSection">
+                <h1>
+                    Download
+                </h1>
+                <h2 style="font-size: 17px;">
+                    ANYWHERE. ANYTIME. ANY DEVICE.
+                </h2>
+                <div class="large-6 medium-6 small-12 columns">
+                    <div class="large-12 medium-12 small-12 columns downloadText">
+                        <p>
+                            <b>
+                                The best way to Learn.&nbsp;English.&nbsp;Fast. is on your device-desktop, Android
+                                tablet, Android phone, iPad, or iPhone.
+                            </b>
+                        </p>
+                        <p>
+                            NYCE makes it easy for you to purchase and download the software. It's available on the <span style="color: #c0d2ff">App Store</span> and at <span style="color: #c0d2ff">
+                                Google play
+                            </span>.
+                        </p>
+                    </div>
+                </div>
+                <div class="large-12 medium-12 small-12 columns appImageContainer">
+                    <div class="large-6 medium-6 small-4 columns ">
+                        <a href="https://itunes.apple.com/us/app/nycenglish/id1022246281?ls=1&mt=8" target="_blank"><img alt="" src="/images/button_appstore.png" class="imgmargin" /></a>
+                        <a href="https://play.google.com/store/apps/details?id=com.vidyatech.biz&hl=en" target="_blank"><img alt="" src="/images/button_googleplay.png" class="imgmargin" /></a>
+                    </div>
+                    <div class="large-6 medium-6 small-8 columns">
+                        <img style="" alt="" src="/images/mobile_view.png" />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="clearfix">
+    </div>
+
+
+
+    @RenderSection("FAQContent", false)
+
+    @*----------------------------------FAQ Section-----------------------------------*@
+
+
+    @*<div class="section" id="faq" style="z-index: 999;">
+            <div class="row" style="height: 100%;">
+                <div class="large-12 faqSection">
+                    <h1 style="color: #262626;">
+                        Frequently Asked Questions
+                    </h1>
+                    <div class="tabs">
+                        <div class="tabCover active" onclick="showHide(this,'general');">
+                            <div class="tabIcon general">
+                            </div>
+                            <div class="tabText">
+                                General
+                            </div>
+                        </div>
+                        <div class="tabCover" onclick="showHide(this,'licensing');">
+                            <div class="tabIcon licensing">
+                            </div>
+                            <div class="tabText">
+                                Licensing
+                            </div>
+                        </div>
+                        <div class="tabCover" onclick="showHide(this,'support');">
+                            <div class="tabIcon support">
+                            </div>
+                            <div class="tabText">
+                                Support
+                            </div>
+                        </div>
+                    </div>
+                    <div id="general" class="faqQuestions">
+                        <div class="tabDesc">
+                            General
+                        </div>
+                        <div class="showHideLink" onclick="ExpandCoolapseAll();" style="cursor: pointer">
+                            Expand all Answers in this section
+                        </div>
+                        <input class="toggle-box" id="header1" type="checkbox" onclick="CheckExpand(this);">
+                        <label class="shiftLeft" for="header1" onclick="">
+                            What is NYC English?
+                        </label>
+                        <div class="answer" id="Divheader1">
+                            Using high definition videos, music, and animations, NYC English engages you with authentic English language communication. You, the learner, can watch and hear your mentors and practice simple communicative tasks with our voice recognition tool, apply grammar rules to conversations, and improve your speaking skills with our key words. Each NYCE lesson models teaching ideas for educators, simple classroom activities, and role plays. With 90 themes available, you are able to learn and practice a variety of English concepts in a fun and engaging way!
+                        </div>
+                        <input class="toggle-box" id="header2" type="checkbox" onclick="CheckExpand(this);">
+                        <label class="shiftLeft" for="header2">
+                            Is it a device I need to purchase?
+                        </label>
+                        <div class="answer" id="Divheader2">
+                            No, NYC English is software to purchase. You can use your desktop, iPhone, iPad, MAC Book, Android tablet and Android phone.
+                        </div>
+                        <input class="toggle-box" id="header3" type="checkbox" onclick="CheckExpand(this);">
+                        <label class="shiftLeft" for="header3">
+                            How is it different than other products?
+                        </label>
+                        <div class="answer" id="Divheader3">
+                            NYCE’s broad and in depth curriculum offers tests, quizzes, grammar, and pronunciation modules to allow students to practice reading and saying key words and phrases. The Teacher Dashboard allows teachers and administrators to view reports for each student and for each class. NYCE offers a Student Dashboard for students to see results in real time.
+                        </div>
+                        <input class="toggle-box" id="header4" type="checkbox" onclick="CheckExpand(this);">
+                        <label class="shiftLeft" for="header4">
+                            Does NYCE provide native language support?
+                        </label>
+                        <div class="answer" id="Divheader4">
+                            Yes, NYCE provides native language support. Currently, we offer support in Bahasa- Indonesia, Bahasa-Malaysia, Spanish, Thai, English-USA, Vietnamese, Mandarin, Cantonese, Burmese, Tagalog, and Japanese (demo only). Other languages are being developed.
+                        </div>
+                    </div>
+                    <div id="licensing" class="faqQuestions">
+                        <div class="tabDesc">
+                            Licensing
+                        </div>
+                        <div class="showHideLink">
+                            Coming Soon!
+                        </div>
+                    </div>
+                    <div id="support" class="faqQuestions">
+                        <div class="tabDesc">
+                            Support
+                        </div>
+                        <div class="showHideLink">
+                            Coming Soon!
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>*@
+
+    @*---------------------------------FAQ section ends-----------------------------------*@
+
+
+    <div class="clearfix">
+    </div>
+    <div class="section">
+        <div class="row">
+            <div class="large-12" style="padding: 0 40px">
+            </div>
+        </div>
+    </div>
+    <div class="clearfix">
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+    @*-----------------About us------------------------*@
+
+    @*<div class="section" id="aboutUs" style="z-index: 999;">
+            <div class="row" style="height: 100%;">
+                <div class="large-12 aboutUsSection">
+                    <h1 style="color: #262626;">
+                        About Us
+                    </h1>
+                    <img src="/images/coming_soon.png" style="outline: none; border: none;">
+                </div>
+            </div>
+        </div>
+        <div class="clearfix">
+        </div>*@
+
+
+
+
+
+
+
+
+
+
+
+
+    @*-------------contact us-----------------*@
+
+    @*<div class="section" id="contectUs">
+            <div class="row">
+                <div class="large-12 columns contactUsSection">
+                    <h1 style="display: table; margin: 0 auto; color: #ffffff;">
+                        Contact Us
+                    </h1>
+                    <br />
+                    <div style="display: table; margin: -14px auto; font-size: 14px; color: #ffffff; font-weight: normal"><img alt="" src="/images/phon.png" id="" /><span> 1-646-705-8051</span></div>
+                    <h3 style="display: table; margin: 21px auto; font-size: 16px; color: #ffffff; font-weight: normal">
+                        Questions, comments, etc? Send them our way!
+                    </h3>
+                    <div class="contactform">
+                        <form method="post" id="formTemplate" name="contactUS">
+                            <p class="name" style="margin-top: 5px;">
+                                <span>Name:</span>
+                                <input type="text" name="name" id="name" value="" placeholder="Enter Name" style="margin-right: 2%;" onfocus="resetFormFields(this);" />
+                            </p>
+                            <p class="errorMessage" id="errName">
+                                Please fill out this field.
+                            </p>
+                            <p class="email" style="margin-top: 5px;">
+                                <span>Email:</span>
+                                <input type="text" name="emailid" id="emailid" value="" placeholder="Enter Email" onfocus="resetFormFields(this);" />
+                            </p>
+                            <p class="errorMessage" id="errEmail">
+                                Please fill out this field.
+                            </p>
+                            <p class="message" style="margin-top: 5px;">
+                                <span>Message:</span>
+                                <textarea name="message" id="visitormessage" placeholder="Enter Your Message" onfocus="resetFormFields(this);"></textarea>
+                            </p>
+                            <p class="errorMessage" id="errMessage">
+                                Please fill out this field.
+                            </p>
+                            <p class="submit">
+                                <input class="submitbutton" id="submitFeedback" type="submit" name="submit" value="SEND" />
+                            </p>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>*@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <div class="section" id="footer" style="padding: 20px; background-color: #000000;
+            border-color: #333637; color: #646464; min-height: 50px;">
+        <div id="footerInner" style="width: 65%; margin: 0 auto;">
+            <div style="width: auto; height: auto;">
+                <img src="/images/logo_small_1.png" />
+                <div style="float: right; width: 50%; text-align: right; padding-right: 15px;">
+                    <span style="font-size: 14px; color: #ffffff">
+                        <a href="termofuse.html" style="text-decoration: none;
+                            color: white;" target="_blank">Legal</a> . <a href="privacy.html" style="text-decoration: none;
+                                color: white;" target="_blank">Privacy</a> </inp>
+                    </span>
+                </div>
+            </div>
+            <div class="socialIconContainer">
+                <div class="socialIcon">
+                    <a href="https://www.facebook.com/profile.php?id=100009743408473" onmouseover="$(this).find('img').attr('src','images/icon_fb_hover.png');" onmouseout="$(this).find('img').attr('src','images/icon_fb.png');">
+                        <img src="/images/icon_fb.png" style="outline: none; border: none;" />
+                    </a>
+                </div>
+                <div class="socialIcon">
+                    <a href="https://www.linkedin.com/profile/view?id=428219385&trk=nav_responsive_tab_profile" onmouseover="$(this).find('img').attr('src','images/icon_in_hover.png');" onmouseout="$(this).find('img').attr('src','images/icon_in.png');">
+                        <img src="/images/icon_in.png" style="outline: none; border: none;" />
+                    </a>
+                </div>
+                <div class="socialIcon">
+                    <a href="https://twitter.com/NYCEnglish1" onmouseover="$(this).find('img').attr('src','images/icon_tw_hover.png');" onmouseout="$(this).find('img').attr('src','images/icon_tw.png');">
+                        <img src="/images/icon_tw.png" style="outline: none; border: none;" />
+                    </a>
+                </div>
+            </div>
+            <div id="copyrightText">
+                <span style="font-size: 12px; color: #ffffff">
+                    Copyright &#169; 2015 NYC English All
+                    Rights Reserved.
+                </span>
+                <br />
+                <a href="http://www.vidyatech.com" target="_blank" style="font-size: 10px; color: grey;
+                        text-decoration: none;">
+                    <span style="display: block; margin-top: 10px;">
+                        Developed and
+                        Managed by Vidyatech
+                    </span>
+                </a>
+            </div>
+        </div>
+        <div id="footerSpace">
+            <br />
+        </div>
+        <script type="text/javascript" src="/slick/slick.js"></script>
+        <script>
+            var swiper = new Swiper('.swiper-container', {
+                pagination: '.swiper-pagination',
+                paginationClickable: true
+            });
+
+        </script>
+
+        <div id="modalVideo" class="modal1">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <a class="cross"></a>
+                </div>
+                <div class="modal-body">
+                    <video controls class="videoplayercls" id="vdo" preload>
+                        <source src="https://nyceprod.blob.core.windows.net/production/videos/corpweb/NYCEng30secPromo.mp4" type="video/mp4"> Your browser does not support HTML5 video.
+                    </video>
+                </div>
+                <div class="clear"></div>
+            </div>
+        </div>
+
+        <!-- The Modal -->
+        <div id="modalGetInfo" class="modalGetInfo">
+            <div class="modalGetInfo-content">
+                <div class="modalGetInfo-header">
+                    <a class="cross"></a>
+                </div>
+                <div class="modalGetInfo-body">
+                    <h1>Get Started</h1>.
+                    <div class="item">
+                        <img src="/images/img1.png" />
+                        <a class="caption">Placement Test</a>
+                    </div>
+                    <div class="item">
+                        <img src="/images/img2.png" />
+                        <a class="caption">Login Course</a>
+                    </div>
+                    <div class="item">
+                        <img src="/images/img3.png" />
+                        <a class="caption">Login Dashboard</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div>
+        @*@RenderSection("CMSMainContent", false)*@
+        @RenderBody()
+    </div>
+</body>
+</html>
+
+
+    @*@RenderBody()
+    @RenderSection("Body", false)*@
+   
+

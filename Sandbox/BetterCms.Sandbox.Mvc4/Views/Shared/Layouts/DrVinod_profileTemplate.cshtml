@@ -1,0 +1,387 @@
+﻿<!--<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <meta charset="utf-8" />
+</head>
+<body>
+
+</body>
+</html>-->
+
+@{
+    Layout = "~/Areas/bcms-Root/Views/Shared/BaseLayout.cshtml";
+}
+@section Styles {
+    @RenderSection("Styles", false)
+
+}
+
+<link href="/file/bcms-installation/Content/Styles/css/bootstrap.css" rel="stylesheet" />
+<link href="/file/bcms-installation/Content/Styles/css/colors.css" rel="stylesheet" />
+<link href="/file/bcms-installation/Content/Styles/css/style.css" rel="stylesheet" />
+<link href="/file/bcms-installation/Content/Styles/css/jetmenu.css" rel="stylesheet" />
+<link href="/file/bcms-installation/Content/Styles/cssStyles.css" rel="stylesheet" />
+<link href="/file/bcms-installation/Content/Styles/css/flexslider.css" rel="stylesheet" />
+<link href="/file/bcms-installation/Content/Styles/css/hover_pack.css" rel="stylesheet" />
+@*<link href="/file/bcms-installation/Content/Styles/css/font-awesome.css" rel="stylesheet" />*@
+<link href="/file/bcms-installation/Content/Styles/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+<link href="/file/bcms-installation/Content/Styles/animate.css" rel="stylesheet" />
+<script src="/file/bcms-installation/Scripts/widget/jquery.js"></script>
+<script src="/file/bcms-installation/Scripts/Js/isotope.min.js"></script>
+<script src="/file/bcms-installation/Scripts/widget/jquery.simple-text-rotator.js"></script>
+<script src="/file/bcms-installation/Scripts/widget/jquery.unveilEffects.js"></script>
+<script src="/file/bcms-installation/Scripts/widget/jquery.flexslider.js"></script>
+
+<script src="/file/bcms-installation/Scripts/widget/bootstrap.js"></script>
+<script src="/file/bcms-installation/Scripts/widget/jquery.isotope.min.js"></script>
+<script src="/file/bcms-installation/Scripts/widget/jetmenu.js"></script>
+<script src="/file/bcms-installation/Scripts/widget/application.js"></script>
+<script src="/file/bcms-installation/Scripts/widget/bootstrap.js"></script>
+
+
+<div class="top-header">
+    <div class="topbar">
+        <div class="container">
+            @*<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                    <div class="callus">
+                        <p>
+                            <span>
+                                <img src="/uploads/widgetimage/menuwithheader_address.png">33/4267/C. Chevarambalam.Paroppadi Road. Calicut 673 009, Kerala, India
+                            </span>
+                        </p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
+                    <div class="callus">
+                        <p>
+                            <span>
+                                <img src="/uploads/widgetimage/menuwithheader_time.png" style="padding-right:;">Monday-Saturday 08:00-19:00
+                            </span>
+                        </p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
+                    <div class="callus">
+                        <p>
+                            <span>
+                                <img src="/uploads/widgetimage/menuwithheader_phone.png" style="padding-right:;">+91 8547501100, +91 9497880066
+                            </span>
+                        </p>
+                    </div>
+                </div>*@
+
+
+            @RenderSection("CMSHeader1", false)
+        </div>
+    </div>
+    <header id="sticky-header" class="header-wrapper top-menu">
+        <div class="container" style="padding-left:3.75%;padding-right:1.75%;">
+            <div class="site-header clearfix">
+
+
+                <div id="" style="position: relative;display: table;width: 100%;">
+                    <div id="mob-logoimg" style="float:left;">
+                        @*<a href="/" title="">
+                                <img style="padding:10px 10px 10px 0px;" src="/uploads/widgetimage/menuwithheader_logo1.jpg" alt="">
+                            </a>*@
+                        @RenderSection("CMSHeader2", false)
+                    </div>
+                    <div id="mob-menu" style="float:right;position: absolute;bottom: 0px;right: 0;padding-bottom:3%;">
+                        @*<div class="">
+                                <ul class="jetmenu blue" id="jetmenu1">
+                                    <li class="showhide">
+                                    <span class='icon'><em></em><em></em><em></em><em></em></span>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="container clearfix" style="float:right;">
+                                <ul class="jetmenu blue" id="jetmenu">
+
+                                    <li class="link active" style=""><a href="#">HOME</a></li>
+                                    <li class="link" style=""><a href="/profile">PROFILE</a></li>
+                                    <li class="link" style=""><a href="/about-rheumatic-diseases">About Rheumatic Diseases</a></li>
+                                    <li class="link" style=""><a href="/contactus">Contact Us</a></li>
+
+                                </ul>
+
+                            </div>*@
+                        @RenderSection("CMSHeader3", false)
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+    </header>
+</div>
+
+<div>
+    @*@RenderBody()*@
+
+    <div class="main-content">
+
+        <div id="" class="">
+            @RenderSection("Banner", false)
+        </div>
+    </div>
+</div>
+<div>
+    <div>
+        <section class="section-whitebg" style="padding-top:43px;padding-bottom:30px;">
+            <div class="container profile-container">
+                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-12">
+
+
+                    @RenderSection("Profile_intro_image", false)
+
+                </div><!-- end col-lg-6 -->
+                <div class="col-lg-8 col-md-8 col-sm-8 col-xs-12" style="padding-top:90px;">
+                    
+                    <div style="box-sizing: border-box;background-color:#f9f9f9;border:4px solid #e2e2e2;padding:25px;">
+                        @RenderSection("Profile_intro_education", false)
+                    </div>
+
+
+                </div><!-- end col-lg-6 -->
+            </div><!-- end container -->
+        </section>
+    </div>
+
+</div>
+
+
+<div>
+    <div>
+        <section class="section-whitebg" style="padding-bottom:40px;padding-top:0px;">
+            <div class="container profile-container">
+                <div class="tab">
+                    @RenderSection("Profile-tab-links", false)
+                </div>
+            </div>
+        </section>
+    </div>
+</div>
+
+
+<div>
+    <div>
+        <section class="section-whitebg" style="padding-bottom:50px;padding-top:0px;">
+            <div class="container profile-container">
+
+                @*@RenderSection("Profile_Tab_contents", false)*@
+                <div class="tabcontent" id="Overview" style="display:block;">
+                    @*<div class="tabcontent-para">
+                        <p>Dr. Vinod Ravindran received his undergraduate medical education (MBBS) from MGM Medical College, Indore and post-graduation in internal medicine (MD) from SMS Medical College, Jaipur, India. His further training was in the UK. He was awarded MRCP (UK) by the Royal College of Physicians of UK. He had rheumatology specialist training at London and was awarded the certificate of completion of specialist training CCT-Rheumatology (UK) by the Postgraduate Medical Education & Training Board of the UK.</p>
+                        <p>In addition he also undertook MSc-Rheumatology from the King’s College in London, UK. He subsequently passed SCE-Rheumatology and was awarded MRCP- Rheumatology (UK) by the Joint Royal Colleges of Physicians Training Board of UK. He was elected a Fellow of the Royal College of Physicians of Edinburgh (FRCP) in 2011.</p>
+                    </div>
+                    <div class="tabcontent-para">
+                        <p class="content-text sub-heading">Career</p>
+                        <p>As a rheumatology specialist registrar he worked in the prestigious rheumatology units of King’s College and St George’s university hospitals in London. Subsequently he worked as a consultant rheumatologist first at Ipswich and then Maidstone, UK before relocating to Kerala. Currently he is the director of Centre for Rheumatology at Calicut, Kerala.</p>
+                    </div>
+                    <div class="tabcontent-para">
+                        <p class="content-text sub-heading">Teaching</p>
+                        <p>He has extensive teaching experience and has taught medical students from various London and the Cambridge medical schools and has been an examiner for the Guy’s Kings’ and St Thomas’ (GKT) school of Medicine, London. He accepted appointment as an assistant professor of rheumatology at the MES Medical College, Perinthalmanna (2011-2014) and continues to teach rheumatology at the Centre for Rheumatology at Calicut, Kerala.</p>
+                    </div>
+
+                    <div class="tabcontent-para">
+                        <p class="content-text sub-heading" style="">Awards</p>
+
+                        <div style="margin-top:15px;">
+                            <div class="row">
+                                <div class="col-lg-2 col-md-2 table-titles"><p>YEAR</p></div>
+                                <div class="col-lg-10 col-md-10 table-titles"><p>DETAILS</p></div>
+                            </div>
+                            <div class="row tabcontent-row">
+                                <div class="col-lg-2 col-md-2"><p>2014</p></div>
+                                <div class="col-lg-10 col-md-10"><p>Award: BSR annual meeting 2014 (Liverpool, UK)-invited lecture on " Rheumatology in the Indian sub continent: Lessons relevant to the UK"</p></div>
+                            </div>
+                            <div class="row tabcontent-row">
+                                <div class="col-lg-2 col-md-2"><p>2012</p></div>
+                                <div class="col-lg-10 col-md-10"><p>Award: Nature travel award 2012 (Nature publications group, UK /Nature Reviews Rheumatology) – Excellence in Rheumatology, Madrid, Spain</p></div>
+                            </div>
+                            <div class="row tabcontent-row">
+                                <div class="col-lg-2 col-md-2"><p>2007</p></div>
+                                <div class="col-lg-10 col-md-10"><p>Award: British Society for Rheumatology Travelling Fellowship 2007 –Bristol and Bath</p></div>
+                            </div>
+                            <div class="row tabcontent-row">
+                                <div class="col-lg-2 col-md-2"><p>2007</p></div>
+                                <div class="col-lg-10 col-md-10"><p>Award: EULAR 2007 Scientific Travel Bursary-Barcelona, Spain</p></div>
+                            </div>
+                            <div class="row tabcontent-row">
+                                <div class="col-lg-2 col-md-2"><p>2006</p></div>
+                                <div class="col-lg-10 col-md-10"><p>Award: Merit - MSc (Rheumatology) - University of London, London, UK</p></div>
+                            </div>
+                        </div>
+
+
+                    </div>*@
+                    @RenderSection("Profile_Tab_contents_Overview", false)
+
+                </div>
+
+
+
+                <div class="tabcontent" id="Researchexperience">
+                    @*<div class="tabcontent-para">
+                        <p>Dr. Vinod Ravindran has ongoing research in rheumatology especially focusing on rheumatoid arthritis, vasculitis and lupus pregnancies. His main focus is patient education and clinical outcomes.</p>
+                        <p>In addition he also undertook MSc-Rheumatology from the King’s College in London, UK. He subsequently passed SCE-Rheumatology and was awarded MRCP- Rheumatology (UK) by the Joint Royal Colleges of Physicians Training Board of UK. He was elected a Fellow of the Royal College of Physicians of Edinburgh (FRCP) in 2011.</p>
+                    </div>
+
+                    <div class="tabcontent-para">
+                        <p class="content-text sub-heading">Research experience</p>
+
+                        <div style="margin-top:15px;">
+                            <div class="row">
+                                <div class="col-lg-2 col-md-2 table-titles"><p>YEAR</p></div>
+                                <div class="col-lg-10 col-md-10 table-titles"><p>DETAILS</p></div>
+                            </div>
+                            <div class="row tabcontent-row">
+                                <div class="col-lg-2 col-md-2"><p>Jan 2011</p></div>
+                                <div class="col-lg-10 col-md-10">
+                                    <p>MES Medical College</p>
+                                    <p>MES Academy of medical science</p>
+                                    <p>India . Malappuram</p>
+                                </div>
+                            </div>
+                            <div class="row tabcontent-row">
+                                <div class="col-lg-2 col-md-2"><p>Jan 2010 - Dec 2011</p></div>
+                                <div class="col-lg-10 col-md-10">
+                                    <p>Ipswich Hospital NHS Trust</p>
+                                    <p>United Kingdom . Ipswich</p>
+                                </div>
+                            </div>
+                            <div class="row tabcontent-row">
+                                <div class="col-lg-2 col-md-2"><p>Jan 2008 - Dec 2009</p></div>
+                                <div class="col-lg-10 col-md-10">
+                                    <p>King's College London · Department of Academic Rheumatology</p>
+                                    <p>United Kingdom . London</p>
+                                </div>
+                            </div>
+                            <div class="row tabcontent-row">
+                                <div class="col-lg-2 col-md-2"><p>Jan 2008 - Dec 2009</p></div>
+                                <div class="col-lg-10 col-md-10">
+                                    <p>St George's hospital</p>
+                                    <p>National Health Service</p>
+                                    <p>United Kingdom . London</p>
+                                </div>
+                            </div>
+                            <div class="row tabcontent-row">
+                                <div class="col-lg-2 col-md-2"><p>Jan 2008</p></div>
+                                <div class="col-lg-10 col-md-10">
+                                    <p>St Helier Hospital</p>
+                                    <p>National Health Service</p>
+                                    <p>United Kingdom . London</p>
+                                </div>
+                            </div>
+                            <div class="row tabcontent-row">
+                                <div class="col-lg-2 col-md-2"><p>Jan 2006</p></div>
+                                <div class="col-lg-10 col-md-10">
+                                    <p>Ashford and St. Peter’s Hospitals NHS Trust</p>
+                                    <p>United Kingdom . Chertsey</p>
+                                </div>
+                            </div>
+                            <div class="row tabcontent-row">
+                                <div class="col-lg-2 col-md-2"><p>Jan 2006</p></div>
+                                <div class="col-lg-10 col-md-10">
+                                    <p>University of London</p>
+                                    <p>United Kingdom . London</p>
+                                </div>
+                            </div>
+                            <div class="row tabcontent-row">
+                                <div class="col-lg-2 col-md-2"><p>Jan 2004</p></div>
+                                <div class="col-lg-10 col-md-10">
+                                    <p>Hull and East Yorkshire Hospitals NHS Trust</p>
+                                    <p>United Kingdom . Hull</p>
+                                </div>
+                            </div>
+                            <div class="row tabcontent-row">
+                                <div class="col-lg-2 col-md-2"><p>Jan 2003</p></div>
+                                <div class="col-lg-10 col-md-10">
+                                    <p>
+                                        Castle Hill Hospital
+                                        Hull and East Yorkshire Hospitals NHS Trust · Department of Cardiology
+                                    </p>
+                                    <p>United Kingdom . Liverpool</p>
+                                </div>
+                            </div>
+                            <div class="row tabcontent-row">
+                                <div class="col-lg-2 col-md-2"><p>Jan 2001</p></div>
+                                <div class="col-lg-10 col-md-10">
+                                    <p>SMS Medical College</p>
+                                    <p>India . Jaipur</p>
+                                </div>
+                            </div>
+
+                        </div>
+
+
+                    </div>*@
+                    @RenderSection("Profile_Tab_contents_Researchexperience", false)
+                </div>
+
+
+                <div class="tabcontent" id="Publications">
+                    @RenderSection("Profile_Tab_contents_Publications", false)
+                    @*<div class="tabcontent-para">
+                        <p>Dr. Vinod Ravindran received his undergraduate medical education (MBBS) from MGM Medical College, Indore and post-graduation in internal medicine (MD) from SMS Medical College, Jaipur, India. His further training was in the UK. He was awarded MRCP (UK) by the Royal College of Physicians of UK. He had rheumatology specialist training at London and was awarded the certificate of completion of specialist training CCT-Rheumatology (UK) by the Postgraduate Medical Education & Training Board of the UK.</p>
+                        <p>In addition he also undertook MSc-Rheumatology from the King’s College in London, UK. He subsequently passed SCE-Rheumatology and was awarded MRCP- Rheumatology (UK) by the Joint Royal Colleges of Physicians Training Board of UK. He was elected a Fellow of the Royal College of Physicians of Edinburgh (FRCP) in 2011.</p>
+                    </div>
+
+                    <div class="tabcontent-para">
+
+
+                        <div>
+                            <div class="row">
+                                <div class="col-lg-2 col-md-2 table-titles"><p>YEAR</p></div>
+                                <div class="col-lg-10 col-md-10 table-titles"><p>DETAILS</p></div>
+                            </div>
+                            <div class="row tabcontent-row">
+                                <div class="col-lg-2 col-md-2"><p>2014</p></div>
+                                <div class="col-lg-10 col-md-10">
+                                    <p><strong>Ravindran V et al. Deflazacort in rheumatology: Where does it stand? </strong><br>Indian Journal of Rheumatology 2014 (in press).</p>
+                                    <p><strong>Thabah M, Ravindran V. Musculoskeletal problems in pregnancy. </strong><br>Rheumatology International 2014 (in press).</p>
+                                    <p><strong>Ravindran V et al. Why Leg Ulcers Do Not Heal? a Prospective Study Showing High Proportion of Small Vessel Vasculitis</strong><br>Arthritis & Rheumatology 2014; 66(11): S1211-12.</p>
+                                    <p><strong>Ravindran V et al. Performance of the 2010 ACR/EULAR classification criteria for rheumatoid arthritis in a prospective early arthritis cohort in Kerala, India.</strong><br>Indian Journal of Rheumatology 2014; 9:107-111.</p>
+                                    <p><strong>Ravindran V . Rheumatology in the Indian sub-continent: Lessons relevant to the UK.</strong><br>Rheumatology (Oxford) 2014; 53(SI): 17.</p>
+                                    <p><strong>Ravindran V . Drugs in rheumatology practice. In: Rheumatology in Primary Care</strong><br>2nd ed, Wagh S (ed), National Book Depot 2014; pp.106-112.</p>
+                                    <p><strong>Ravindran V. Glucocorticoid therapy in rheumatic diseases. In: Manual of Rheumatology</strong><br>4th Ed, Rao URK et al (Eds), Indian Rheumatology Association 2014; pp.150-159.</p>
+                                    <p><strong>Ravindran V et al. Traditional and inflammation related cardiovascular risk in rheumatoid arthritis.</strong><br>Indian Journal of Rheumatology 2014; 9: 2-3.</p>
+                                </div>
+                            </div>
+                            <div class="row tabcontent-row">
+                                <div class="col-lg-2 col-md-2"><p>2013</p></div>
+                                <div class="col-lg-10 col-md-10">
+                                    <p><strong>Ravindran V. Rheumatology outcome measures in principle and practice in India: So near and yet so far. </strong><br>Indian Journal of Rheumatology 2013; 8(S1):8-10.</p>
+                                    <p><strong>Ravindran V et al. The effect of rheumatoid arthritis disease education on adherence to medication and follow ups in Kerala, India </strong><br>Journal of Rheumatology 2013; 40:1460-1.</p>
+                                    <p><strong>Ravindran V . Systemic vasculitis and pregnancy. In: Rheumatic Diseases in Women & Children</strong><br>1st ed, Sharma SK & Sawhney S (eds), Jaypee Brothers Medical Publishers (P) Ltd 2013; pp.44-49.</p>
+                                    <p><strong>Ravindran V et al. How to appraise a scientific paper.</strong><br>Indian Journal of Rheumatology 2013; 8: 27-29.</p>
+                                    <p><strong>Ravindran V et al. Primary antiphospholipid syndrome in monozygotic twins. </strong><br>Lupus 2013; 22: 92-94.</p>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>*@
+                    <div style="display:block;float:right;">
+                        @RenderSection("Profile_Downloadlink", false)
+                    </div>
+                </div>
+
+                
+            </div><!-- end container -->
+        </section>
+    </div>
+
+</div>
+
+
+
+<footer>
+    <div>
+        <div id="footer" class="main-content">
+           
+            @RenderSection("CMSFooter", false)
+        </div>
+    </div>
+</footer>
+

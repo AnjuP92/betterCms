@@ -1,0 +1,499 @@
+﻿@using BetterCms.Module.Root.Mvc.Helpers
+@using BetterCms.Module.Installation
+
+@{
+    Layout = "~/Areas/bcms-Root/Views/Shared/BaseLayout.cshtml";
+}
+@section Styles {
+    @RenderSection("Styles", false)
+
+}
+
+
+<!doctype html>
+<html class="no-js" lang="en" style="overflow-x:hidden">
+<head>
+
+    <link href="/file/bcms-installation/Content/Styles/new.css" rel="stylesheet" />
+    <link href="/file/bcms-installation/Content/Styles/banner-slider.css" rel="stylesheet" />
+    <link href="/file/bcms-installation/Content/Styles/style.css" rel="stylesheet" />
+    <link href="/file/bcms-installation/Content/Styles/coolC.css" rel="stylesheet" />
+    <link href="/file/bcms-installation/Content/Styles/responsive.css" rel="stylesheet" />
+    <link href="/file/bcms-installation/Content/Styles/flexisel.css" rel="stylesheet" />
+    <link href="/file/bcms-installation/Content/Styles/home.css" rel="stylesheet" />
+    <link href="/file/bcms-installation/Content/Styles/social.css" rel="stylesheet" type="text/css" />
+    <link href="/file/bcms-installation/Scripts/slick1/slick.css" rel="stylesheet" />
+    <link href="/file/bcms-installation/Content/Styles/slick.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+
+    <script src="/file/bcms-installation/Scripts/Js/jquery-3.2.1.min.js "></script>
+    <script type="text/javascript" src="/file/bcms-installation/Scripts/Js/custom.js"></script>
+    <script type="text/javascript" src="/file/bcms-installation/Scripts/Js/camera.js"></script>	
+    <script type="text/javascript" src="/file/bcms-installation/Scripts/Js/slick.js"></script>
+    <script type="text/javascript" src="/file/bcms-installation/Scripts/Js/banner-slider.js"></script>
+
+   <script type="text/javascript" src="http://www.google.com/jsapi?key=[apikey]"></script>	
+	<script type="text/javascript" src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.10.0/jquery.validate.min.js"></script>
+<script type="text/javascript" src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.10.0/additional-methods.js"></script>
+	<script type="text/javascript">
+//document.write('<style type="text/css">body {visibility:hidden;}</style>');
+
+</script>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-54469785-1', 'auto');
+  ga('require', 'linkid', 'linkid.js');
+  ga('send', 'pageview', location.pathname + location.search + location.hash);
+  
+  setTimeout("ga('send','event','Profitable Engagement','time on page more than 1 minute')",60000); 
+  
+ $(document).ready(function () {
+
+			$("#show").click(function(){
+      
+	    $("#menuOption").slideToggle("fast")
+    });
+	
+              
+            });
+
+</script>
+
+</head>
+<body>
+<style>
+p{
+margin-bottom:15px;
+}
+.whiteiconcolor{color:white;}
+
+.tab{
+text-align:center;
+}
+.tab button{
+background-color:white;
+color:black;
+font-size:1.2em;
+
+}
+.tablinks.active{
+border-bottom:solid 2px #0067b8;
+color:#0067b8;
+}
+#tick ul li{
+  background: url(/uploads/Vidyatech/Services/tick.png) no-repeat left top;
+  padding: 2px 0px 15px 40px;
+  /* reset styles (optional): */
+  list-style: none;
+  margin: 0;
+}
+      #nav h5:hover {
+    color: #ffffc0;
+}
+</style>
+   
+
+    <!--
+
+    <script>
+            (function (i, s, o, g, r, a, m) {
+                i['GoogleAnalyticsObject'] = r;
+                i[r] = i[r] || function () {
+                    (i[r].q = i[r].q || []).push(arguments)
+                }, i[r].l = 1 * new Date();
+                a = s.createElement(o),
+                    m = s.getElementsByTagName(o)[0];
+                a.async = 1;
+                a.src = g;
+                m.parentNode.insertBefore(a, m)
+            })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+
+            ga('create', 'UA-54469785-1', 'auto');
+            ga('require', 'displayfeatures');
+            ga('require', 'linkid', 'linkid.js');
+            ga('send', 'pageview', location.pathname + location.search + location.hash);
+
+            setTimeout("ga('send','event','Profitable Engagement','time on page more than 1 minute')", 60000);
+
+
+
+            $(document).ready(function () {
+
+			$("#show").click(function(){
+
+	    $("#menuOption").slideToggle("fast")
+    });
+
+                var x = location.hash;
+
+                if (x == "#services") {
+                    $('#home').removeClass("active");
+                    $('#serviceli').addClass("active");
+                } else if (x == "#contact") {
+                    $('#home').removeClass("active");
+                    $('#contactli').addClass("active");
+
+                } else if (x == "#testimonial") {
+                    $('#home').removeClass("active");
+                    $('#testimonialli').addClass("active");
+
+                } else if (x == "#team") {
+                    $('#home').removeClass("active");
+                    $('#teamli').addClass("active");
+
+                }
+
+            });
+    </script>
+
+    <script src='https://www.google.com/recaptcha/api.js'></script>
+
+    
+</head>
+
+
+
+
+
+
+<body>
+    <style>
+        p {
+            margin-bottom: 15px;
+        }
+
+        .whiteiconcolor {
+            color: white;
+        }
+
+        .tab {
+            text-align: center;
+        }
+
+            .tab button {
+                background-color: white;
+                color: black;
+                font-size: 1.2em;
+            }
+
+        .tablinks.active {
+            border-bottom: solid 2px #0067b8;
+            color: #0067b8;
+        }
+
+        #tick ul li {
+            background: url(/uploads/images/services/tick.png) no-repeat left top;
+            padding: 2px 0px 15px 40px;
+            /* reset styles (optional): */
+            list-style: none;
+            margin: 0;
+        }
+    </style>
+    -->
+    <div>
+        <section>
+
+            <nav id="nav" role="navigation">
+                @RenderSection("CMSSectionHeader", false)
+            </nav>
+        </section>
+    </div>
+
+    <script>
+        var menuOpen = (function () {
+            jQuery("#show").click(function () {
+                jQuery("#menuOption").slideToggle("fast");
+                jQuery("#menuOption").css("overflow-y", "scroll");
+            });
+
+        });
+    </script>
+    <div>
+        <section>
+           
+
+                    @RenderSection("CMSSectionServiceBanner", false)
+               
+        </section>
+    </div>
+    <div class="clearfix anchor"></div>
+    <div>
+        <section>
+
+
+            @RenderSection("CMSSectionLink", false)
+
+        </section>
+    </div>
+    <div class="clearfix "></div>
+    <div>
+        <section>
+
+            @RenderSection("CMSSectionContent1", false)
+
+
+        </section>
+    </div>
+    <div class="clearfix "></div>
+    <div>
+        <section>
+
+            @RenderSection("CMSSectionServices", false)
+
+        </section>
+    </div>
+
+
+    <!---->
+
+    <div class="clearfix"></div>
+    <div>
+        <section>
+
+
+            @RenderSection("CMSSectionContactBanner", false)
+
+        </section>
+    </div>
+
+
+
+
+
+
+
+    <div>
+        <section>
+            <div class="section" style="background-color:black;padding:55px 0;padding-bottom:45px;">
+                <div class="row">
+                    <div class="large-12 columns">
+                        <div class="large-3 medium-6 columns">
+                            @RenderSection("CMSSectionFooterSection1", false)
+                        </div>
+                        <div class="large-3 medium-6 columns">
+                            @RenderSection("CMSSectionFooterSection2", false)
+                        </div>
+                        <div class="large-3 medium-6 columns">
+                            @RenderSection("CMSSectionFooterSection3", false)
+                        </div>
+                        <div class="large-3 medium-6 columns">
+                            @RenderSection("CMSSectionFooterSectionLogo", false)
+                        </div>
+                        <div class="large-3 medium-6 columns end" style="margin-top:20px;background-color:white;">
+
+
+                            @RenderSection("CMSSectionFooterSectionSlider", false)
+                        </div>
+
+
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+    <footer class="section" style="background-color: #f2f2f2;border-color: #333637;color: #646464;min-height: 50px;">
+        <div class="row" style="text-align: center;">
+            <div style="margin: 18px auto 0; margin-top:30px;">
+                @RenderSection("CMSSectionPreFooter", false)
+            </div>
+        </div>
+    </footer>
+    <script type="text/javascript" src="/file/bcms-installation/Scripts/Js/jquery.easing.1.3.js"></script>
+
+    <script type="text/javascript" src="/file/bcms-installation/Scripts/Js/jquery.mobile.customized.min.js"></script>
+    <script type="text/javascript" src="/file/bcms-installation/Scripts/Js/jquery.sticky.js"></script>
+    <script type="text/javascript" src="/file/bcms-installation/Scripts/Js/modernizr.min.js"></script>
+    <script type="text/javascript" src="/file/bcms-installation/Scripts/Js/jquery.nav.js"></script>
+    <script type="text/javascript" src="/file/bcms-installation/Scripts/Js/jquery.scrollTo.js"></script>
+    <script type="text/javascript" src="/file/bcms-installation/Scripts/Js/jquery.flexisel.js"></script>
+    <script type="text/javascript" src="/file/bcms-installation/Scripts/slick1/slick.js"></script>
+    <script type="text/javascript" src="/file/bcms-installation/Scripts/Js/modernizr.js"></script>
+    <script type="text/javascript" src="/file/bcms-installation/Scripts/Js/respond.min.js"></script>
+    <script type="text/javascript" src="/file/bcms-installation/Scripts/Js/jquery.carouFredSel-6.0.4-packed.js"></script>
+    <script src="/file/bcms-installation/Scripts/Js/jquery.placeholder.js"></script>
+    <script src="/file/bcms-installation/Scripts/Js/jquery.h5validate.js"></script>
+    <script src="/file/bcms-installation/Scripts/Js/custom.js"></script>
+
+
+    <script type="text/javascript">
+
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-11012032-1']);
+  _gaq.push(['_trackPageview']);
+
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+
+    </script>
+
+    <script>
+	function openservice (evt, service) {
+		var i, tabcontent, tablinks, id;
+		tabcontent = document.getElementsByClassName("tabcontent");
+		for (i = 0; i < tabcontent.length; i++) {
+			tabcontent[i].style.display = "none";
+		}
+
+		tablinks = document.getElementsByClassName("tablinks");
+		for (i = 0; i < tablinks.length; i++) {
+			tablinks[i].className                = tablinks[i].className.replace(" active", "");
+			tablinks[i].querySelector('img').src = tablinks[i].querySelector('img').getAttribute('data-src1');
+		}
+		document.getElementById(service).style.display = "block";
+		evt.currentTarget.className += " active";
+		evt.currentTarget.querySelector('img').src     = evt.currentTarget.querySelector('img').getAttribute('data-src2');
+	}
+
+	document.getElementById("defaultOpen").click();
+    </script>
+
+
+    <script type="text/javascript">
+setTimeout( function() {jQuery(document).ready(function($){$('body').css({'visibility':'visible'});});},400);
+    </script>
+    <script>
+jQuery(document).ready(function () {
+    var hashtag = /#\S+/
+    jQuery('.menu li a').click(function(){
+        var match = jQuery(this).attr('href').match(hashtag);
+        ga('send', 'pageview', '/' + match[0]);
+    })
+});
+    </script>
+    <Script>
+		 $('.slicker4').slick({
+   // dots: true,
+   infinite: true,
+    autoplay: true,
+   autoplaySpeed: 3000,
+   speed: 300,
+    slidesToScroll: 1,
+    arrows: false
+
+});
+    </Script>
+
+<!--
+    <script type="text/javascript">
+        var _gaq = _gaq || [];
+        _gaq.push(['_setAccount', 'UA-11012032-1']);
+        _gaq.push(['_trackPageview']);
+
+        (function () {
+            var ga = document.createElement('script');
+            ga.type = 'text/javascript';
+            ga.async = true;
+            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(ga, s);
+        })();
+    </script>
+
+    <script type="text/javascript">
+        setTimeout(function () {
+            jQuery(document).ready(function ($) {
+                $('body').css({
+                    'visibility': 'visible'
+                });
+            });
+        }, 400);
+    </script>
+    <script>
+        jQuery(document).ready(function () {
+            var hashtag = /#\S+/
+            jQuery('.menu li a').click(function () {
+                var match = jQuery(this).attr('href').match(hashtag);
+                ga('send', 'pageview', '/' + match[0]);
+            })
+        });
+    </script>
+
+
+    <!--   CAPTCHA Scripts       
+    <script language='JavaScript' type='text/javascript'>
+        function refreshCaptcha() {
+            var img = document.images['captchaimg'];
+            img.src = img.src.substring(0, img.src.lastIndexOf("?")) + "?rand=" + Math.random() * 1000;
+        }
+    </script>
+    <!--
+
+    <script type="text/javascript">
+            var _gaq = _gaq || [];
+            _gaq.push(['_setAccount', 'UA-11012032-1']);
+            _gaq.push(['_trackPageview']);
+
+            (function () {
+                var ga = document.createElement('script');
+                ga.type = 'text/javascript';
+                ga.async = true;
+                ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+                var s = document.getElementsByTagName('script')[0];
+                s.parentNode.insertBefore(ga, s);
+            })();
+    </script>
+
+    <script type="text/javascript">
+            setTimeout(function () {
+                jQuery(document).ready(function ($) {
+                    $('body').css({
+                        'visibility': 'visible'
+                    });
+                });
+            }, 400);
+    </script>
+    <script>
+            jQuery(document).ready(function () {
+                var hashtag = /#\S+/
+                jQuery('.menu li a').click(function () {
+                    var match = jQuery(this).attr('href').match(hashtag);
+                    ga('send', 'pageview', '/' + match[0]);
+                })
+            });
+    </script>
+
+
+    <!--   CAPTCHA Scripts       -->
+    <!--  <script language='JavaScript' type='text/javascript'>
+               function refreshCaptcha() {
+                   var img = document.images['captchaimg'];
+                   img.src = img.src.substring(0, img.src.lastIndexOf("?")) + "?rand=" + Math.random() * 1000;
+               }
+       </script>
+
+        <Script>
+		 $('.slicker3').slick({
+    dots: true,
+   // infinite: true,
+    //autoplay: true,
+   // autoplaySpeed: 3000,
+    //speed: 300,
+    slidesToScroll: 1,
+    arrows: true,
+    prevArrow: '<div class="slick-prev" ><i class="fa fa-angle-left" aria-hidden="true"></i></div>',
+    nextArrow: '<div class="slick-next"><i class="fa fa-angle-right" aria-hidden="true"></i></div>'
+});
+    </Script>
+    <Script>
+		 $('.slicker4').slick({
+   // dots: true,
+   infinite: true,
+    autoplay: true,
+   autoplaySpeed: 3000,
+   speed: 300,
+    slidesToScroll: 1,
+    arrows: false
+
+});
+    </Script>
+        -->
+</body>
+
+</html>

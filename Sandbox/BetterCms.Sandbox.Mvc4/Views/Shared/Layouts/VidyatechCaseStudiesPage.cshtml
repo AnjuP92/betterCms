@@ -1,0 +1,283 @@
+﻿@using BetterCms.Module.Root.Mvc.Helpers
+@using BetterCms.Module.Installation
+
+@{
+    Layout = "~/Areas/bcms-Root/Views/Shared/BaseLayout.cshtml";
+}
+@section Styles {
+    @RenderSection("Styles", false)
+
+}
+<!doctype html>
+<html class="no-js" lang="en" style="overflow-x:hidden">
+<head>
+
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link href="/file/bcms-installation/Content/Styles/new.css" rel="stylesheet" />
+
+    <link href="/file/bcms-installation/Content/Styles/responsive.css" rel="stylesheet" />
+    <link rel="icon" type="image/png" href="../images/Vidya.ico" />
+    <script src="/file/bcms-installation/Scripts/Js/jquery-3.2.1.min.js"></script>
+    <script src="/file/bcms-installation/Scripts/Js/jquery.carouFredSel.js "></script>
+    <script src="/file/bcms-installation/Scripts/Js/custom.js "></script>
+
+    <title>Mission Dashboard for Government of India</title>
+
+
+    <style>
+        blockquote {
+            font-family: Arial,Georgia,serif;
+            font-size: 18px;
+            color: #7f7f7f;
+            line-height: 1.45;
+            padding: 0em 40px;
+            position: relative;
+        }
+
+            blockquote::before {
+                color: #f79646;
+                content: "“";
+                display: block;
+                font-size: 60px;
+                left: -1px;
+                position: absolute;
+                top: -10px;
+            }
+
+            blockquote::after {
+                color: #f79646;
+                content: "”";
+                display: block;
+                font-size: 60px;
+                right: 10px;
+                position: absolute;
+                bottom: -10px;
+            }
+
+            blockquote cite::before {
+                content: "—";
+            }
+
+            blockquote cite {
+                color: #4f81bd;
+                display: block;
+                font-size: 12px;
+                margin-top: 5px;
+            }
+
+        .hero {
+            position: relative;
+            width: 100% !important;
+        }
+
+        .saf {
+            background-color: #e9e9e9;
+        }
+
+        .blu {
+            background-color: #31859c;
+        }
+
+        .hero:after {
+            content: '';
+            position: absolute;
+            top: 0%;
+            left: 50%;
+            margin-left: -25px;
+            width: 0;
+            height: 0;
+            border-top: solid 25px white;
+            border-left: solid 25px transparent;
+            border-right: solid 25px transparent;
+        }
+
+        p {
+            line-height: 1.8em;
+            margin-bottom: 10px;
+        }
+
+        li {
+            margin-left: 20px;
+        }
+
+        fieldset {
+            border: 3px solid white;
+            min-width: 0;
+            width: 100%;
+        }
+
+            fieldset legend {
+                margin-left: 10px;
+                padding-left: 10px;
+                padding-right: 10px;
+                color: white;
+                margin-right: 110px;
+                background: none;
+            }
+
+        h4 {
+            color: white;
+            padding: 5% 5% 6% 5%;
+            text-transform: uppercase;
+        }
+    </style>
+    <script>
+        $(function () {
+            var $c = $('#carousel'),
+                $w = $(window);
+
+            $c.carouFredSel({
+                responsive: true,
+                align: true,
+                items: {
+                    visible: {
+                        min: 1,
+                        max: 5
+                    }
+                },
+                scroll: {
+                    items: 1,
+                    duration: 8000,
+                    timeoutDuration: 0,
+                    easing: 'linear',
+                    pauseOnHover: 'immediate',
+                    fx: 'directscroll'
+                }
+            });
+        });
+    </script>
+
+</head>
+<body>
+    <div>
+        <section>
+            <div class="section">
+                @RenderSection("CMSSectionBanner", false)
+            </div>
+        </section>
+    </div>
+    <div>
+        <section>
+            <div class="section" style="margin-top:4%;">
+                <div class="row">
+                    <div class="large-12">
+                        <div class="medium-6 columns liner" style="padding-top:3%;">
+                            @RenderSection("CMSSection1Content1", false)
+                        </div>
+                        <div class="medium-6 columns ">
+                            <blockquote>
+                                @RenderSection("CMSSection1Content2", false)
+                            </blockquote>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+    <div>
+        <section>
+            <div class="section" style="margin-top:4%;">
+                <div class="row">
+                    <div class="large-12">
+                        <div style="text-align:center;">
+                            @RenderSection("CMSSection2", false)
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+    <div>
+        <section>
+            <div class="section hero saf" style="padding-bottom:2%;">
+                <div class="row">
+                    <div class="large-12" style="margin-top:50px;">
+                        <div class="medium-3 columns">
+                            <div style="text-align:center;">
+                                @RenderSection("CMSSection3Content1", false)
+                            </div>
+                        </div>
+                        <div class="medium-9 columns">
+
+                            @RenderSection("CMSSection3Content2", false)
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+    <div>
+        <section>
+            <div class="section" style="">
+                <div class="row">
+                    <div class="large-12" style="margin-top:4%;">
+                        <div class="medium-3 columns">
+                            <div style="text-align:center;">
+                                @RenderSection("CMSSection4Content1", false)
+                            </div>
+                        </div>
+                        <div class="medium-9 columns">
+                            @RenderSection("CMSSection4Content2", false)
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+    <div>
+        <section>
+            <div class="section" style="margin-top:4%;">
+                <div class="row">
+                    <div class="large-12">
+                        <div style="text-align:center;">
+                            @RenderSection("CMSSection5", false)
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+    <div>
+        <section>
+            <div class="section hero blu" style="padding-bottom:2%;">
+                <div class="row">
+                    <div class="large-12" style="margin-top:50px;color:white;">
+                        @RenderSection("CMSSection6", false)
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+    <div>
+        <section>
+            <div class="section" style="margin-top:1%;">
+                <div class="row">
+                    <div class="large-12">
+                        <div style="text-align:center;">
+
+                            @RenderSection("CMSSectionFooter", false)
+                        </div>
+                    </div>
+                </div>
+            </div>
+            </section></div>
+   <div>
+            <section>
+                <div class="section" style="margin-top:4%;">
+                    <div class="row">
+                        <div class="large-12 columns">
+                            
+                                    @RenderSection("CMSSectionPreFooter", false)
+                              
+                        </div>
+                    </div>
+                </div>
+            </section>
+       </div>
+</body>
+</html>
+
+
+

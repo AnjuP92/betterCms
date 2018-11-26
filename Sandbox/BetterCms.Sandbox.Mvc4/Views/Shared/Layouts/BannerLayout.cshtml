@@ -1,0 +1,29 @@
+﻿@{
+    Layout = "~/Areas/bcms-Root/Views/Shared/BaseLayout.cshtml";
+}
+@section Styles {
+    @RenderSection("Styles", false)
+
+}
+
+<link rel="stylesheet" href="/file/bcms-installation/content/styles/bootstrap.css" />
+
+<div style="height: 560px; background-size: cover; background-position: 80% center; background-image: url(/file/bcms-installation/content/styles/images/banner_img.jpg); "></div>
+<header>
+    <div>
+        @RenderSection("CMSHeader", false)
+    </div>
+</header>
+
+<div>
+
+    @RenderSection("CMSMainContent", false)
+    @RenderBody()
+</div>
+
+
+<footer>
+    <div>
+        @RenderSection("CMSFooter", false)
+    </div>
+</footer>

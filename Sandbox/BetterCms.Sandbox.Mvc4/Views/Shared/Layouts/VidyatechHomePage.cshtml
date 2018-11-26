@@ -1,0 +1,720 @@
+﻿@using BetterCms.Module.Root.Mvc.Helpers
+@using BetterCms.Module.Installation
+
+@{
+    Layout = "~/Areas/bcms-Root/Views/Shared/BaseLayout.cshtml";
+}
+@section Styles {
+    @RenderSection("Styles", false)
+
+}@*
+<!doctype html>
+<html class="no-js" lang="en">
+
+<head>
+    <link href="/file/bcms-installation/Content/Styles/new.css" rel="stylesheet" />
+    <link href="/file/bcms-installation/Content/Styles/banner-slider.css" rel="stylesheet" />
+    <link href="/file/bcms-installation/Content/Styles/style.css" rel="stylesheet" />
+    <link href="/file/bcms-installation/Content/Styles/coolC.css" rel="stylesheet" />
+    <link href="/file/bcms-installation/Content/Styles/responsive.css" rel="stylesheet" />
+    <link href="/file/bcms-installation/Content/Styles/flexisel.css" rel="stylesheet" />
+    <link href="/file/bcms-installation/Content/Styles/home.css" rel="stylesheet" />
+    <link href="/file/bcms-installation/Content/Styles/social.css" rel="stylesheet" type="text/css" />
+    <link href="/file/bcms-installation/Content/Styles/slick.css" rel="stylesheet" />
+
+    <script src="/file/bcms-installation/Scripts/Js/jquery-3.2.1.min.js "></script>
+    <script type="text/javascript" src="http://www.google.com/jsapi?key=[apikey]"></script>
+    <script type="text/javascript" src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.10.0/jquery.validate.min.js"></script>
+    <script type="text/javascript" src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.10.0/additional-methods.js"></script>
+
+    <script type="text/javascript" src="/file/bcms-installation/Scripts/Js/banner-slider.js"></script>
+    <script type="text/javascript" src="/file/bcms-installation/Scripts/Js/jquery.easing.1.3.js"></script>
+    <!--script type="text/javascript" src="js/jquery.mobile.customized.min.js"></script-->
+    <script type="text/javascript" src="/file/bcms-installation/Scripts/Js/jquery.nav.js"></script>
+    <script type="text/javascript" src="/file/bcms-installation/Scripts/Js/jquery.scrollTo.js"></script>
+    <script type="text/javascript" src="/file/bcms-installation/Scripts/Js/jquery.flexisel.js"></script>
+    <script type="text/javascript" src="/file/bcms-installation/Scripts/Js/slick.js"></script>
+    <script type="text/javascript" src="/file/bcms-installation/Scripts/Js/modernizr.js"></script>
+    <script type="text/javascript" src="/file/bcms-installation/Scripts/Js/respond.min.js"></script>
+    <script type="text/javascript" src="/file/bcms-installation/Scripts/Js/jquery.carouFredSel-6.0.4-packed.js"></script>
+    <script src="/file/bcms-installation/Scripts/Js/jquery.placeholder.js"></script>
+    <script src="/file/bcms-installation/Scripts/Js/jquery.h5validate.js"></script>
+    <script src="/file/bcms-installation/Scripts/Js/custom.js"></script>
+    <script type="text/javascript" src="/file/bcms-installation/Scripts/Js/jquery.sticky.js"></script>
+    <script type="text/javascript">
+        //document.write('<style type="text/css">body {visibility:hidden;}</style>');
+    </script>
+ 
+    <script>
+        var menuOpen = (function () {
+            jQuery("#show").click(function () {
+
+                jQuery("#menuOption").slideToggle("fast");
+            });
+        });
+    </script>
+    <script>
+        (function (i, s, o, g, r, a, m) {
+            i['GoogleAnalyticsObject'] = r;
+            i[r] = i[r] || function () {
+                (i[r].q = i[r].q || []).push(arguments)
+            }, i[r].l = 1 * new Date();
+            a = s.createElement(o),
+                m = s.getElementsByTagName(o)[0];
+            a.async = 1;
+            a.src = g;
+            m.parentNode.insertBefore(a, m)
+        })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+
+        ga('create', 'UA-54469785-1', 'auto');
+        ga('require', 'displayfeatures');
+        ga('require', 'linkid', 'linkid.js');
+        ga('send', 'pageview', location.pathname + location.search + location.hash);
+
+        setTimeout("ga('send','event','Profitable Engagement','time on page more than 1 minute')", 60000);
+
+
+
+        $(document).ready(function () {
+
+
+            var x = location.hash;
+
+            if (x == "#services") {
+                $('#home').removeClass("active");
+                $('#serviceli').addClass("active");
+            } else if (x == "#contact") {
+                $('#home').removeClass("active");
+                $('#contactli').addClass("active");
+
+            } else if (x == "#testimonial") {
+                $('#home').removeClass("active");
+                $('#testimonialli').addClass("active");
+
+            } else if (x == "#team") {
+                $('#home').removeClass("active");
+                $('#teamli').addClass("active");
+
+            }
+
+        });
+    </script>
+
+    <script src='https://www.google.com/recaptcha/api.js'></script>
+
+</head>
+
+<body>
+    <!----->
+    <!--
+      <div id="preloader">
+          <div id="status"></div>
+      </div>
+
+      <div class="clearfix"></div>
+      <!--NEW MENU CODE -->
+    <div>
+        <section>
+            <nav id="nav" role="navigation">
+                @RenderSection("CMSSectionHeader", false)
+            </nav>
+        </section>
+    </div>
+    <!---- NEW MENU CODE ENDS -->
+    <div class="clearfix anchor" id="home-top"></div>
+  <div> <section>
+        <div id="bannerSlider">
+            @RenderSection("CMSSectionBannerSlider", false)
+        </div>
+    </section></div>
+   <div> <section>
+        <marquee id='scroll_news' style="background-color:#ffce2d;clear:both;" onmouseover="this.setAttribute('scrollamount', 0, 0);" onmouseout="this.setAttribute('scrollamount', 6, 0);">
+            @RenderSection("CMSSectionMarqueeText", false)
+        </marquee>
+    </section></div>
+    <div class="clearfix" id="services"></div>
+    <div>
+        <section>
+            <!-- Services Column Starts here  -->
+            <div class="section" style="padding-top:55px;padding-bottom:45px;">
+                <!-- Section For Services -->
+                @RenderSection("CMSSectionServices", false)
+                <!-- main large-12 End -->
+            </div>
+            <!-- Row End -->
+
+
+        </section>
+    </div>
+    <!-- Section For Services End -->
+    <!-- Services Column ends here  -->
+
+    <div class="clearfix" id="casestudies"></div>
+    <div>
+        <section>
+            <div class="section" style="padding:45px 0;background-color:#e6e6e6;">
+                <div class="row">
+                    <div class="large-12 columns" style="padding:0 55px;">
+                        @RenderSection("CMSSectionCaseStudies", false)
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+    <div class="clearfix" id="testimonial"></div>
+    <div>
+        <section>
+            <div class="section" style="background: url(/uploads/Vidyatech/Testimonial/testimonials_bg3.jpg); background-size: cover; padding: 45px 0 60px 0;">
+                <div class="row" style="margin-top:20px;">
+                    <div class="large-12 columns" style="color:white;">
+                        @RenderSection("CMSSectionTestimonial", false)
+                    </div>
+                </div>
+            </div>
+
+        </section>
+    </div>
+
+
+    <div id="team" class="clearfix"></div>
+    <div>
+        <section>
+            <div class="section" style="padding:45px 0;margin-top:20px;padding-bottom:0;">
+                <div class="row">
+                    <div class="large-12" style="padding:0 40px">
+                        @RenderSection("CMSSectionLeadership", false)
+
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+    <div id="contact" class="clearfix"></div>
+    <div>
+        <section>
+            <div class="section" style="padding:55px 0;background-color:#E7EFF2;">
+                <div class="row">
+                    <div class="large-12 columns">
+                        @RenderSection("CMSSectionContactUs", false)
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+    <div>
+        <section>
+            <div class="section" style="padding:45px 0;background-color:white">
+                <div class="row">
+                    <div class="large-12 columns">
+                        @RenderSection("CMSSectionMarquee", false)
+
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+    <div>
+        <section>
+            <div class="section" style="background-color:#2e3133;padding:45px 0">
+                <div class="row">
+                    <div class="large-12 columns">
+                        <div class="large-3 medium-6 columns">
+                            @RenderSection("CMSSectionFooterSection1", false)
+                        </div>
+                        <div class="large-3 medium-6 columns">
+                            @RenderSection("CMSSectionFooterSection2", false)
+                        </div>
+                        <div class="large-3 medium-6 columns">
+                            @RenderSection("CMSSectionFooterSection3", false)
+                        </div>
+                        <div class="large-3 medium-6 columns">
+                            @RenderSection("CMSSectionFooterSectionLogo", false)
+                        </div>
+                        <div class="large-3 medium-6 columns end" style="margin-top:20px;">
+                            
+                                    @RenderSection("CMSSectionFooterSectionSlider", false)
+                                   
+                                </div>
+                                <!--<div class="large-12 columns">
+             <div class="socialmedia">
+                <a href="https://www.facebook.com/Vidyatech" target="_blank"><img src="images/social/fb.png" /></a>
+                <a href="https://plus.google.com/114894168344443802562/about" target="_blank"><img src="images/social/gplus.png" /></a>
+                <a href="http://www.linkedin.com/company/vidyatech" target="_blank"><img src="images/social/in.png" /></a>
+                <a href="https://twitter.com/Quiz_Magic" target="_blank"><img src="images/social/twitter.png" /></a>
+                <a href="http://www.youtube.com/user/proofguru" target="_blank"><img src="images/social/youtube.png" /></a>
+             </div>
+             </div>-->
+
+                            </div>
+                        </div>
+            </div>
+        </section>
+    </div>
+    <footer class="section" style="background-color: #222526;border-color: #333637;color: #646464;min-height: 50px;">
+        <div class="row" style="text-align: center;">
+            <div style="margin: 18px auto 0; margin-top:30px;">
+                @RenderSection("CMSSectionPreFooter", false)
+            </div>
+        </div>
+    </footer>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!------>
+
+    <script type="text/javascript">
+        var _gaq = _gaq || [];
+        _gaq.push(['_setAccount', 'UA-11012032-1']);
+        _gaq.push(['_trackPageview']);
+
+        (function () {
+            var ga = document.createElement('script');
+            ga.type = 'text/javascript';
+            ga.async = true;
+            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+            var s = document.getElementsByTagName('script')[0];
+            s.parentNode.insertBefore(ga, s);
+        })();
+    </script>
+
+    <script type="text/javascript">
+        setTimeout(function () {
+            jQuery(document).ready(function ($) {
+                $('body').css({
+                    'visibility': 'visible'
+                });
+            });
+        }, 400);
+    </script>
+    <script>
+        jQuery(document).ready(function () {
+            var hashtag = /#\S+/
+            jQuery('.menu li a').click(function () {
+                var match = jQuery(this).attr('href').match(hashtag);
+                ga('send', 'pageview', '/' + match[0]);
+            })
+        });
+    </script>
+
+
+    <!--   CAPTCHA Scripts       -->
+    <script language='JavaScript' type='text/javascript'>
+        function refreshCaptcha() {
+            var img = document.images['captchaimg'];
+            img.src = img.src.substring(0, img.src.lastIndexOf("?")) + "?rand=" + Math.random() * 1000;
+        }
+    </script>
+
+    <script>
+        // $(document).mouseup(function (e)
+        // {
+        // var container = $("#nav");
+        // if (!container.is(e.target) // if the target of the click isn't the container...
+        // && container.has(e.target).length === 0) // ... nor a descendant of the container
+        // {
+        // if($('#menuOption').css('display') == 'block')
+        // {
+        // $("#menuOption").css("display","none");
+        // ($("#nav").removeClass("active"));
+        // }
+
+
+        // }
+
+        // });
+    </script>
+</body>
+
+</html>
+
+*@
+<!doctype html>
+<html class="no-js" lang="en">
+
+<head>
+    <link href="/file/bcms-installation/Content/Styles/new.css" rel="stylesheet" />
+    <link href="/file/bcms-installation/Content/Styles/banner-slider.css" rel="stylesheet" />
+    <link href="/file/bcms-installation/Content/Styles/style.css" rel="stylesheet" />
+    <link href="/file/bcms-installation/Content/Styles/coolC.css" rel="stylesheet" />
+    <link href="/file/bcms-installation/Content/Styles/responsive.css" rel="stylesheet" />
+    <link href="/file/bcms-installation/Content/Styles/flexisel.css" rel="stylesheet" />
+    <link href="/file/bcms-installation/Content/Styles/home.css" rel="stylesheet" />
+    <link href="/file/bcms-installation/Content/Styles/social.css" rel="stylesheet" type="text/css" />
+    <link href="/file/bcms-installation/Scripts/slick1/slick.css" rel="stylesheet" />
+    <link href="/file/bcms-installation/Content/Styles/slick.css" rel="stylesheet" />
+
+    <script src="/file/bcms-installation/Scripts/Js/jquery-3.2.1.min.js "></script>
+    <script type="text/javascript" src="http://www.google.com/jsapi?key=[apikey]"></script>
+    <script type="text/javascript" src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.10.0/jquery.validate.min.js"></script>
+    <script type="text/javascript" src="http://ajax.aspnetcdn.com/ajax/jquery.validate/1.10.0/additional-methods.js"></script>
+    <script type="text/javascript" src="/file/bcms-installation/Scripts/Js/slick.js"></script>
+    <script type="text/javascript" src="/file/bcms-installation/Scripts/Js/banner-slider.js"></script>
+    <script type="text/javascript" src="/file/bcms-installation/Scripts/Js/jquery.easing.1.3.js"></script>
+    <!--script type="text/javascript" src="js/jquery.mobile.customized.min.js"></script-->
+    <script type="text/javascript" src="/file/bcms-installation/Scripts/Js/jquery.nav.js"></script>
+    <script type="text/javascript" src="/file/bcms-installation/Scripts/Js/jquery.scrollTo.js"></script>
+    <script type="text/javascript" src="/file/bcms-installation/Scripts/Js/jquery.flexisel.js"></script>
+    <script type="text/javascript" src="/file/bcms-installation/Scripts/slick1/slick.js"></script>
+    <script type="text/javascript" src="/file/bcms-installation/Scripts/Js/modernizr.js"></script>
+    <script type="text/javascript" src="/file/bcms-installation/Scripts/Js/respond.min.js"></script>
+    <script type="text/javascript" src="/file/bcms-installation/Scripts/Js/jquery.carouFredSel-6.0.4-packed.js"></script>
+    <script src="/file/bcms-installation/Scripts/Js/jquery.placeholder.js"></script>
+    <script src="/file/bcms-installation/Scripts/Js/jquery.h5validate.js"></script>
+    <script src="/file/bcms-installation/Scripts/Js/custom.js"></script>
+    <script type="text/javascript" src="/file/bcms-installation/Scripts/Js/jquery.sticky.js"></script>
+    <script type="text/javascript">
+        //document.write('<style type="text/css">body {visibility:hidden;}</style>');
+    </script>
+
+
+
+    <script>
+            (function (i, s, o, g, r, a, m) {
+                i['GoogleAnalyticsObject'] = r;
+                i[r] = i[r] || function () {
+                    (i[r].q = i[r].q || []).push(arguments)
+                }, i[r].l = 1 * new Date();
+                a = s.createElement(o),
+                    m = s.getElementsByTagName(o)[0];
+                a.async = 1;
+                a.src = g;
+                m.parentNode.insertBefore(a, m)
+            })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+
+            ga('create', 'UA-54469785-1', 'auto');
+            ga('require', 'displayfeatures');
+            ga('require', 'linkid', 'linkid.js');
+            ga('send', 'pageview', location.pathname + location.search + location.hash);
+
+            setTimeout("ga('send','event','Profitable Engagement','time on page more than 1 minute')", 60000);
+
+
+
+            $(document).ready(function () {
+
+			$("#show").click(function(){
+
+	    $("#menuOption").slideToggle("fast")
+    });
+
+                var x = location.hash;
+
+                if (x == "#services") {
+                    $('#home').removeClass("active");
+                    $('#serviceli').addClass("active");
+                } else if (x == "#contact") {
+                    $('#home').removeClass("active");
+                    $('#contactli').addClass("active");
+
+                } else if (x == "#testimonial") {
+                    $('#home').removeClass("active");
+                    $('#testimonialli').addClass("active");
+
+                } else if (x == "#team") {
+                    $('#home').removeClass("active");
+                    $('#teamli').addClass("active");
+
+                }
+
+            });
+    </script>
+
+    <script src='https://www.google.com/recaptcha/api.js'></script>
+
+
+</head>
+
+<body>
+    <style>
+        #nav h5:hover {
+    color: #ffffc0;
+}
+    </style>
+    <div>
+        <section>
+            <nav id="nav" role="navigation">
+                @RenderSection("CMSSectionHeader", false)
+            </nav>
+        </section>
+    </div>
+
+    <div class="clearfix anchor" id="home-top"></div>
+    <div>
+        <section>
+            <div id="bannerSlider">
+                @RenderSection("CMSSectionBannerSlider", false)
+            </div>
+        </section>
+    </div>
+    <div>
+        <section>
+            <marquee id='scroll_news' style="background-color:#ffce2d;clear:both;" onmouseover="this.setAttribute('scrollamount', 0, 0);" onmouseout="this.setAttribute('scrollamount', 6, 0);">
+                @RenderSection("CMSSectionMarqueeText", false)
+            </marquee>
+        </section>
+    </div>
+    <div class="clearfix" id="services"></div>
+    <div>
+        <section>
+
+            <div class="section" style="padding-top:55px;padding-bottom:45px;">
+
+                @RenderSection("CMSSectionServices", false)
+
+            </div>
+
+
+
+        </section>
+    </div>
+
+    <div class="clearfix" id="casestudies"></div>
+    <div>
+        <section>
+            <div id="caseslider" class="section" style="padding-top:55px;padding-bottom:45px;background-color:#e6e6e6;">
+                <div class="row">
+                    <div class="large-12 columns" style="">
+                        @RenderSection("CMSSectionCaseStudies", false)
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+    <div class="clearfix" id="testimonial"></div>
+    <div>
+        <section>
+            <div id="testslider" class="section" style="background: url(/uploads/Vidyatech/Testimonial/testimonials_bg3.jpg); background-size:cover;padding-top:55px;padding-bottom:45px;">
+                <div class="row" style="">
+                    <div class="large-12" style="color:white;">
+                        @RenderSection("CMSSectionTestimonial", false)
+                    </div>
+                </div>
+            </div>
+
+        </section>
+    </div>
+    <div>
+        <section>
+            <div class="section" style="padding:45px 0;background-color:white">
+                <div class="row">
+                    <div class="large-12 columns">
+                        @RenderSection("CMSSectionMarquee", false)
+
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <div id="team" class="clearfix"></div>
+    <div>
+        <section>
+            <div class="section" style="padding:45px 0;margin-top:20px;padding-bottom:0;">
+                <div class="row">
+                    <div class="large-12" style="padding:0 40px">
+                        @RenderSection("CMSSectionLeadership", false)
+
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+    <div id="contact" class="clearfix"></div>
+    <div>
+        <section>
+            <div class="section" style="padding:55px 0;background-color:#E7EFF2;">
+                <div class="row">
+                    <div class="large-12 columns">
+                        @RenderSection("CMSSectionContactUs", false)
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <div>
+        <section>
+            <div class="section" style="background-color:black;padding:55px 0;padding-bottom:45px;">
+                <div class="row">
+                    <div class="large-12 ">
+                        <div class="large-3 medium-6 columns">
+                            @RenderSection("CMSSectionFooterSection1", false)
+                        </div>
+                        <div class="large-3 medium-6 columns">
+                            @RenderSection("CMSSectionFooterSection2", false)
+                        </div>
+                        <div class="large-3 medium-6 columns">
+                            @RenderSection("CMSSectionFooterSection3", false)
+                        </div>
+                        <div class="large-3 medium-6 columns">
+                            @RenderSection("CMSSectionFooterSectionLogo", false)
+                        </div>
+                        <div class="large-3 medium-6 columns end" style="margin-top:20px;background-color:white;">
+
+                            @RenderSection("CMSSectionFooterSectionSlider", false)
+
+                        </div>
+
+
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <footer class="section" style="background-color: #f2f2f2;border-color: #333637;color: #646464;min-height: 50px;">
+        <div class="row" style="text-align: center;">
+            <div style="margin: 18px auto 0; margin-top:30px;">
+                @RenderSection("CMSSectionPreFooter", false)
+            </div>
+        </div>
+    </footer>
+
+    <script type="text/javascript">
+                    var _gaq = _gaq || [];
+                    _gaq.push(['_setAccount', 'UA-11012032-1']);
+                    _gaq.push(['_trackPageview']);
+
+                    (function () {
+                        var ga = document.createElement('script');
+                        ga.type = 'text/javascript';
+                        ga.async = true;
+                        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+                        var s = document.getElementsByTagName('script')[0];
+                        s.parentNode.insertBefore(ga, s);
+                    })();
+    </script>
+
+    <script type="text/javascript">
+                    setTimeout(function () {
+                        jQuery(document).ready(function ($) {
+                            $('body').css({
+                                'visibility': 'visible'
+                            });
+                        });
+                    }, 400);
+    </script>
+    <script>
+                    jQuery(document).ready(function () {
+                        var hashtag = /#\S+/
+                        jQuery('.menu li a').click(function () {
+                            var match = jQuery(this).attr('href').match(hashtag);
+                            ga('send', 'pageview', '/' + match[0]);
+                        })
+                    });
+    </script>
+
+
+
+    <script language='JavaScript' type='text/javascript'>
+                    function refreshCaptcha() {
+                        var img = document.images['captchaimg'];
+                        img.src = img.src.substring(0, img.src.lastIndexOf("?")) + "?rand=" + Math.random() * 1000;
+                    }
+    </script>
+
+    <script type="text/javascript">
+                    var _gaq = _gaq || [];
+                    _gaq.push(['_setAccount', 'UA-11012032-1']);
+                    _gaq.push(['_trackPageview']);
+
+                    (function () {
+                        var ga = document.createElement('script');
+                        ga.type = 'text/javascript';
+                        ga.async = true;
+                        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+                        var s = document.getElementsByTagName('script')[0];
+                        s.parentNode.insertBefore(ga, s);
+                    })();
+    </script>
+
+    <script type="text/javascript">
+                    setTimeout(function () {
+                        jQuery(document).ready(function ($) {
+                            $('body').css({
+                                'visibility': 'visible'
+                            });
+                        });
+                    }, 400);
+    </script>
+    <script>
+                    jQuery(document).ready(function () {
+                        var hashtag = /#\S+/
+                        jQuery('.menu li a').click(function () {
+                            var match = jQuery(this).attr('href').match(hashtag);
+                            ga('send', 'pageview', '/' + match[0]);
+                        })
+                    });
+    </script>
+
+
+
+    <script language='JavaScript' type='text/javascript'>
+                    function refreshCaptcha() {
+                        var img = document.images['captchaimg'];
+                        img.src = img.src.substring(0, img.src.lastIndexOf("?")) + "?rand=" + Math.random() * 1000;
+                    }
+    </script>
+
+
+
+    <Script>
+                    $('.slicker3').slick({
+                        dots: true,
+                        // infinite: true,
+                        //autoplay: true,
+                        // autoplaySpeed: 3000,
+                        //speed: 300,
+                        slidesToScroll: 1,
+                        arrows: true,
+                        prevArrow: '<div class="slick-prev" ><i class="fa fa-angle-left" aria-hidden="true"></i></div>',
+                        nextArrow: '<div class="slick-next"><i class="fa fa-angle-right" aria-hidden="true"></i></div>'
+                    });
+    </Script>
+    <Script>
+                    $('.slicker4').slick({
+                        // dots: true,
+                        infinite: true,
+                        autoplay: true,
+                        autoplaySpeed: 3000,
+                        speed: 300,
+                        slidesToScroll: 1,
+                        arrows: false
+
+                    });
+    </Script>
+
+</body>
+
+</html>

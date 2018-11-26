@@ -1,0 +1,58 @@
+
+@media only screen and  (max-width: 759px) {   
+    .s-buttonNew {       
+         
+        color: #428bca;      
+        height: 32px;       
+        padding: 0;
+        text-align: center;
+        text-decoration: none;      
+        vertical-align: middle;
+        width: 32px;
+    }
+
+    .show-hide-menu {
+        xbackground: url("../images/icon_menu.png") no-repeat scroll 0 0;
+        background-position: center center;
+		background-size: contain;
+        color: #eee;
+        xtext-indent: -9999px;
+    }
+  
+    
+    
+    .s-buttonNew {
+	    color: #eee;
+	}
+
+  
+    .show-hide-menu {
+        display: block;
+		float:left;
+    }
+  
+    #aside {
+        display: block;
+        -webkit-transition: all 1s ease-in-out;
+        -moz-transition: all 1s ease-in-out;
+        -o-transition: all 1s ease-in-out;
+        transition: all 1s ease-in-out;
+    }
+    [data-sidebar] {
+        display: block;
+        -webkit-transition: all 1s ease-in-out;
+        -moz-transition: all 1s ease-in-out;
+        -o-transition: all 1s ease-in-out;
+        transition: all 1s ease-in-out;
+    }
+ #mobile-logo
+ {
+	width: 150px;
+	height: 100%;
+	float: right;
+	xbackground-image:url('../images/banner_logo.png');
+	background-size: contain;
+	background-repeat: no-repeat
+ }
+ .nav-up{top:-55px;}
+}

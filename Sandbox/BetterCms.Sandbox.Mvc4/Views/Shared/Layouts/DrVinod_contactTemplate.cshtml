@@ -1,0 +1,171 @@
+﻿
+
+@{
+    Layout = "~/Areas/bcms-Root/Views/Shared/BaseLayout.cshtml";
+}
+@section Styles {
+    @RenderSection("Styles", false)
+
+}
+
+<link href="/file/bcms-installation/Content/Styles/css/bootstrap.css" rel="stylesheet" />
+<link href="/file/bcms-installation/Content/Styles/css/colors.css" rel="stylesheet" />
+<link href="/file/bcms-installation/Content/Styles/css/style.css" rel="stylesheet" />
+<link href="/file/bcms-installation/Content/Styles/css/jetmenu.css" rel="stylesheet" />
+<link href="/file/bcms-installation/Content/Styles/cssStyles.css" rel="stylesheet" />
+<link href="/file/bcms-installation/Content/Styles/css/flexslider.css" rel="stylesheet" />
+<link href="/file/bcms-installation/Content/Styles/css/hover_pack.css" rel="stylesheet" />
+@*<link href="/file/bcms-installation/Content/Styles/css/font-awesome.css" rel="stylesheet" />*@
+<link href="/file/bcms-installation/Content/Styles/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+
+<link href="/file/bcms-installation/Content/Styles/animate.css" rel="stylesheet" />
+
+
+<script src="/file/bcms-installation/Scripts/widget/jquery.js"></script>
+<script src="/file/bcms-installation/Scripts/widget/bootstrap.js"></script>
+<script src="/file/bcms-installation/Scripts/widget/jquery.isotope.min.js"></script>
+<script src="/file/bcms-installation/Scripts/widget/jetmenu.js"></script>
+
+<script src="/file/bcms-installation/Scripts/widget/bootstrap.js"></script>
+<script src="/file/bcms-installation/Scripts/widget/jquery.simple-text-rotator.js"></script>
+<script src="/file/bcms-installation/Scripts/widget/jquery.unveilEffects.js"></script>
+<script src="/file/bcms-installation/Scripts/Js/isotope.min.js"></script>
+<script src="/file/bcms-installation/Scripts/widget/jquery.flexslider.js"></script>
+<script src="/file/bcms-installation/Scripts/widget/application.js"></script>
+
+<style>
+
+</style>
+
+<div class="top-header">
+    <div class="topbar">
+        <div class="container">
+            @*<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                    <div class="callus">
+                        <p>
+                            <span>
+                                <img src="/uploads/widgetimage/menuwithheader_address.png">33/4267/C. Chevarambalam.Paroppadi Road. Calicut 673 009, Kerala, India
+                            </span>
+                        </p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
+                    <div class="callus">
+                        <p>
+                            <span>
+                                <img src="/uploads/widgetimage/menuwithheader_time.png" style="padding-right:;">Monday-Saturday 08:00-19:00
+                            </span>
+                        </p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
+                    <div class="callus">
+                        <p>
+                            <span>
+                                <img src="/uploads/widgetimage/menuwithheader_phone.png" style="padding-right:;">+91 8547501100, +91 9497880066
+                            </span>
+                        </p>
+                    </div>
+                </div>*@
+
+
+            @RenderSection("CMSHeader1", false)
+        </div>
+    </div>
+    <header id="sticky-header" class="header-wrapper top-menu">
+        <div class="container" style="padding-left:3.75%;padding-right:1.75%;">
+            <div class="site-header clearfix">
+
+
+                <div id="" style="position: relative;display: table;width: 100%;">
+                    <div id="mob-logoimg" style="float:left;">
+                        @*<a href="/" title="">
+                                <img style="padding:10px 10px 10px 0px;" src="/uploads/widgetimage/menuwithheader_logo1.jpg" alt="">
+                            </a>*@
+                        @RenderSection("CMSHeader2", false)
+                    </div>
+                    <div id="mob-menu" style="float:right;position: absolute;bottom: 0px;right: 0;padding-bottom:3%;">
+                        @*<div class="">
+                                <ul class="jetmenu blue" id="jetmenu1">
+                                    <li class="showhide">
+                                    <span class='icon'><em></em><em></em><em></em><em></em></span>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div class="container clearfix" style="float:right;">
+                                <ul class="jetmenu blue" id="jetmenu">
+
+                                    <li class="link active" style=""><a href="#">HOME</a></li>
+                                    <li class="link" style=""><a href="/profile">PROFILE</a></li>
+                                    <li class="link" style=""><a href="/about-rheumatic-diseases">About Rheumatic Diseases</a></li>
+                                    <li class="link" style=""><a href="/contactus">Contact Us</a></li>
+
+                                </ul>
+
+                            </div>*@
+                        @RenderSection("CMSHeader3", false)
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+    </header>
+</div>
+
+<div>
+    @*@RenderBody()*@
+
+    <div class="main-content">
+
+        <div id="" class="">
+            @RenderSection("Banner", false)
+        </div>
+    </div>
+</div>
+
+<div>
+    <div id="get-in-touch">
+        <section class="section-whitebg" style="padding-bottom:70px;">
+            <div class="container">
+                <div class="col-lg-8 col-md-8 col-sm-12">
+                    <div class="">
+                        <div class="services_lists">
+
+                            @RenderSection("CMSLeftContent1", false)
+                        </div><!-- services_lists -->
+                    </div><!-- end widget -->
+                </div><!-- end col-lg-6 -->
+                <div class="col-lg-4 col-md-4 col-sm-12" style="">
+                    <div class="" style="">
+                        @*<img style="margin-top:115px;" alt="" src="/uploads/widgetimage/dir-vinod.png">*@
+                        @RenderSection("CMSLeftContent2", false)
+                    </div>
+                </div><!-- end col-lg-6 -->
+            </div><!-- end container -->
+        </section>
+    </div>
+
+</div>
+
+<div>
+
+    <section class="section-whitebg" style="padding-top:0px;">
+        <div style="height:445px;">
+
+            @RenderSection("MapRegion", false)
+
+        </div><!-- end container -->
+    </section>
+
+</div>
+
+
+<footer>
+    <div>
+        <div id="footer" class="main-content">
+            
+            @RenderSection("CMSFooter", false)
+        </div>
+    </div>
+</footer>

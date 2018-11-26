@@ -1,0 +1,174 @@
+﻿<!--<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+	<meta charset="utf-8" />
+</head>
+<body>
+
+</body>
+</html>-->
+    
+@{
+    Layout = "~/Areas/bcms-Root/Views/Shared/BaseLayout.cshtml";
+}
+@section Styles {
+    @RenderSection("Styles", false)
+
+}
+
+<link href="/file/bcms-installation/Content/Styles/css/bootstrap.css" rel="stylesheet" />
+<link href="/file/bcms-installation/Content/Styles/css/colors.css" rel="stylesheet" />
+<link href="/file/bcms-installation/Content/Styles/css/style.css" rel="stylesheet" />
+<link href="/file/bcms-installation/Content/Styles/css/jetmenu.css" rel="stylesheet" />
+<link href="/file/bcms-installation/Content/Styles/cssStyles.css" rel="stylesheet" />
+<link href="/file/bcms-installation/Content/Styles/css/flexslider.css" rel="stylesheet" />
+<link href="/file/bcms-installation/Content/Styles/css/hover_pack.css" rel="stylesheet" />
+@*<link href="/file/bcms-installation/Content/Styles/css/font-awesome.css" rel="stylesheet" />*@
+<link href="/file/bcms-installation/Content/Styles/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+<script src="/file/bcms-installation/Scripts/Js/isotope.min.js"></script>
+<link href="/file/bcms-installation/Content/Styles/animate.css" rel="stylesheet" />
+
+<script src="/file/bcms-installation/Scripts/widget/jquery.flexslider.js"></script>
+<script src="/file/bcms-installation/Scripts/widget/jquery.js"></script>
+<script src="/file/bcms-installation/Scripts/widget/bootstrap.js"></script>
+<script src="/file/bcms-installation/Scripts/widget/jquery.isotope.min.js"></script>
+<script src="/file/bcms-installation/Scripts/widget/jetmenu.js"></script>
+<script src="/file/bcms-installation/Scripts/widget/application.js"></script>
+<script src="/file/bcms-installation/Scripts/widget/bootstrap.js"></script>
+<script src="/file/bcms-installation/Scripts/widget/jquery.simple-text-rotator.js"></script>
+<script src="/file/bcms-installation/Scripts/widget/jquery.unveilEffects.js"></script>
+
+<div>
+    <div class="topbar">
+        <div class="container">
+            @*<div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                    <div class="callus">
+                        <p>
+                            <span>
+                                <img src="/uploads/widgetimage/menuwithheader_address.png">33/4267/C. Chevarambalam.Paroppadi Road. Calicut 673 009, Kerala, India
+                            </span>
+                        </p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
+                    <div class="callus">
+                        <p>
+                            <span>
+                                <img src="/uploads/widgetimage/menuwithheader_time.png" style="padding-right:;">Monday-Saturday 08:00-19:00
+                            </span>
+                        </p>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-3 col-sm-3 col-xs-12">
+                    <div class="callus">
+                        <p>
+                            <span>
+                                <img src="/uploads/widgetimage/menuwithheader_phone.png" style="padding-right:;">+91 8547501100, +91 9497880066
+                            </span>
+                        </p>
+                    </div>
+                </div>*@
+
+
+            @RenderSection("CMSHeader1", false)
+        </div>
+    </div>
+    <header class="header-wrapper">
+        <div class="container">
+            <div class="site-header clearfix">
+                <div id="nav" class="affix-top">
+                    <div class="col-lg-3 col-md-3 col-sm-12 title-area pull-left">
+                        <div class="site-title" id="title">
+                            @*<a href="index.html" title="">
+                                    <img style="padding:10px;" src="/uploads/widgetimage/menuwithheader_logo1.jpg" alt="">
+                                </a>*@
+                            @RenderSection("CMSHeader2", false)
+                        </div><!-- site title -->
+                    </div><!-- title area -->
+                    @*<div class="col-lg-2 col-md-2 col-sm-12">
+                        </div>*@
+                    <div class="col-lg-9 col-md-9 col-sm-12" style="margin-top:30px">
+                        @*<div class="container clearfix">
+                                                    <ul id="jetmenu" class="jetmenu blue">
+                                                        <li class="showhide" style="display: none;">
+                            <span class="menutitle">MENU</span><span class="icon"><em></em><em></em><em></em><em></em></span></li>
+
+
+                            <li class="active" style=""><a style="" href="#">HOME</a></li>
+                            <li style=""><a style="" href="#">PROFILE</a></li>
+                            <li style=""><a style="" href="#">About Rheumatic Diseases</a></li>
+                            <li style=""><a style="" href="#">Contact Us</a></li>
+                            </ul>
+
+                                                </div>*@
+                        @RenderSection("CMSHeader3", false)
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+</div>
+
+<div>
+    @*@RenderBody()*@
+
+    <div class="main-content">
+
+        <div id="" class="">
+            @RenderSection("Banner", false)
+        </div>
+    </div>
+</div>
+<div>
+    <div>
+        <section class="section-whitebg" style="padding-bottom:24px;">
+            <div class="container">
+               @RenderSection("CMSAboutdiseases", false)
+            </div><!-- end container -->
+        </section>
+    </div>
+
+</div>
+<div>
+    <div>
+        <section class="section-whitebg" style="padding-bottom:50px;padding-top:0px;">
+            <div class="container">
+                @*<div id="London" class="tabcontent">
+                    @RenderSection("CMSAboutdiseases_accordion1", false)
+                </div>
+
+                <div id="Paris" class="tabcontent">
+                    @RenderSection("CMSAboutdiseases_accordion2", false)
+                </div>*@
+
+
+
+               @RenderSection("CMSAboutdiseases_accordion", false)
+            </div><!-- end container -->
+        </section>
+    </div>
+
+</div>
+
+
+
+<footer>
+    <div>
+        <div id="footer" class="main-content">
+            @*<div id="footertop" style="background-color:">
+                    <img src="/uploads/widgetimage/footerwithtoplink_logo.png" style="margin:0 auto;">
+                    <p id="">33 / 4267 / C, Chevarambalam - Paroppadi Road, Near Chevarambalam Junction, Calicut - 673 009, Kerala, India</p>
+                    <p id="">Email: cfrclt@gmail.com | Contact Us: +91 8547 50 11 00, +91 9497 88 00 66</p>
+                </div>
+                <div id="footerbottom">
+                    <span>© Copyright 2017. All Rights Reserved. Designed by : Vidyatech </span>
+                    <div id="uparrow">
+                        <img>
+                    </div>
+                </div>*@
+            @RenderSection("CMSFooter", false)
+        </div>
+    </div>
+</footer>
+
